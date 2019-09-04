@@ -3,18 +3,33 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		039F4A115092D0C7952D2A89 /* Pods_CMGO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 871F74E7642359D457C57C76 /* Pods_CMGO.framework */; };
 		FC34BD0B230BA67400C5B7E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC34BD0A230BA67400C5B7E2 /* AppDelegate.swift */; };
 		FC34BD0D230BA67400C5B7E2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC34BD0C230BA67400C5B7E2 /* ViewController.swift */; };
 		FC34BD10230BA67400C5B7E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC34BD0E230BA67400C5B7E2 /* Main.storyboard */; };
 		FC34BD12230BA67700C5B7E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC34BD11230BA67700C5B7E2 /* Assets.xcassets */; };
 		FC34BD15230BA67700C5B7E2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC34BD13230BA67700C5B7E2 /* LaunchScreen.storyboard */; };
+		FC4D11D8231A15B300AD08E2 /* ContactoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4D11D7231A15B300AD08E2 /* ContactoViewController.swift */; };
+		FC63A5952318E9B5002B201E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC63A5942318E9B5002B201E /* LoginViewController.swift */; };
+		FC73A388231EAA3C0003751B /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC73A387231EAA3C0003751B /* Test.swift */; };
+		FC73A38A231EAB760003751B /* TestDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC73A389231EAB760003751B /* TestDate.swift */; };
+		FC73A38D231EB4980003751B /* TestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC73A38C231EB4980003751B /* TestTableViewCell.swift */; };
+		FCA0AEAA231604FE003BC16F /* Slide.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA0AEA9231604FE003BC16F /* Slide.swift */; };
+		FCA0AEAD23160C61003BC16F /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA0AEAC23160C61003BC16F /* Utils.swift */; };
+		FCA0AEAF23161410003BC16F /* EventosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA0AEAE23161410003BC16F /* EventosViewController.swift */; };
+		FCA0AEB123161446003BC16F /* ExamenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA0AEB023161446003BC16F /* ExamenViewController.swift */; };
+		FCA0AEB323161461003BC16F /* MedicosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA0AEB223161461003BC16F /* MedicosViewController.swift */; };
+		FCA0AEB52316148E003BC16F /* VigenciaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA0AEB42316148E003BC16F /* VigenciaViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		01DAF0A909501F6EA05DDCE6 /* Pods-CMGO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CMGO.debug.xcconfig"; path = "Target Support Files/Pods-CMGO/Pods-CMGO.debug.xcconfig"; sourceTree = "<group>"; };
+		871F74E7642359D457C57C76 /* Pods_CMGO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CMGO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD11CE6B6C221C821AE88B67 /* Pods-CMGO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CMGO.release.xcconfig"; path = "Target Support Files/Pods-CMGO/Pods-CMGO.release.xcconfig"; sourceTree = "<group>"; };
 		FC34BD07230BA67400C5B7E2 /* CMGO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CMGO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC34BD0A230BA67400C5B7E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FC34BD0C230BA67400C5B7E2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +37,17 @@
 		FC34BD11230BA67700C5B7E2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FC34BD14230BA67700C5B7E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FC34BD16230BA67700C5B7E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FC4D11D7231A15B300AD08E2 /* ContactoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactoViewController.swift; sourceTree = "<group>"; };
+		FC63A5942318E9B5002B201E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		FC73A387231EAA3C0003751B /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
+		FC73A389231EAB760003751B /* TestDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDate.swift; sourceTree = "<group>"; };
+		FC73A38C231EB4980003751B /* TestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTableViewCell.swift; sourceTree = "<group>"; };
+		FCA0AEA9231604FE003BC16F /* Slide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slide.swift; sourceTree = "<group>"; };
+		FCA0AEAC23160C61003BC16F /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		FCA0AEAE23161410003BC16F /* EventosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventosViewController.swift; sourceTree = "<group>"; };
+		FCA0AEB023161446003BC16F /* ExamenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamenViewController.swift; sourceTree = "<group>"; };
+		FCA0AEB223161461003BC16F /* MedicosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicosViewController.swift; sourceTree = "<group>"; };
+		FCA0AEB42316148E003BC16F /* VigenciaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VigenciaViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +55,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				039F4A115092D0C7952D2A89 /* Pods_CMGO.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		15AF40A8C9A175936980CEBF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				01DAF0A909501F6EA05DDCE6 /* Pods-CMGO.debug.xcconfig */,
+				BD11CE6B6C221C821AE88B67 /* Pods-CMGO.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		3B6DD9BD4F4E4EA71B23FA5D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				871F74E7642359D457C57C76 /* Pods_CMGO.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FC34BCFE230BA67400C5B7E2 = {
 			isa = PBXGroup;
 			children = (
 				FC34BD09230BA67400C5B7E2 /* CMGO */,
 				FC34BD08230BA67400C5B7E2 /* Products */,
+				15AF40A8C9A175936980CEBF /* Pods */,
+				3B6DD9BD4F4E4EA71B23FA5D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +100,49 @@
 		FC34BD09230BA67400C5B7E2 /* CMGO */ = {
 			isa = PBXGroup;
 			children = (
+				FC73A38B231EB4780003751B /* Views */,
+				FCA0AEAB23160C57003BC16F /* Common */,
+				FCA0AEA8231604E7003BC16F /* Models */,
 				FC34BD0A230BA67400C5B7E2 /* AppDelegate.swift */,
 				FC34BD0C230BA67400C5B7E2 /* ViewController.swift */,
 				FC34BD0E230BA67400C5B7E2 /* Main.storyboard */,
 				FC34BD11230BA67700C5B7E2 /* Assets.xcassets */,
 				FC34BD13230BA67700C5B7E2 /* LaunchScreen.storyboard */,
 				FC34BD16230BA67700C5B7E2 /* Info.plist */,
+				FCA0AEAE23161410003BC16F /* EventosViewController.swift */,
+				FCA0AEB023161446003BC16F /* ExamenViewController.swift */,
+				FCA0AEB223161461003BC16F /* MedicosViewController.swift */,
+				FCA0AEB42316148E003BC16F /* VigenciaViewController.swift */,
+				FC63A5942318E9B5002B201E /* LoginViewController.swift */,
+				FC4D11D7231A15B300AD08E2 /* ContactoViewController.swift */,
 			);
 			path = CMGO;
+			sourceTree = "<group>";
+		};
+		FC73A38B231EB4780003751B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FC73A38C231EB4980003751B /* TestTableViewCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		FCA0AEA8231604E7003BC16F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FCA0AEA9231604FE003BC16F /* Slide.swift */,
+				FC73A387231EAA3C0003751B /* Test.swift */,
+				FC73A389231EAB760003751B /* TestDate.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		FCA0AEAB23160C57003BC16F /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				FCA0AEAC23160C61003BC16F /* Utils.swift */,
+			);
+			name = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +152,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FC34BD19230BA67700C5B7E2 /* Build configuration list for PBXNativeTarget "CMGO" */;
 			buildPhases = (
+				BC7F8DBC71AE20B7D2C70E91 /* [CP] Check Pods Manifest.lock */,
 				FC34BD03230BA67400C5B7E2 /* Sources */,
 				FC34BD04230BA67400C5B7E2 /* Frameworks */,
 				FC34BD05230BA67400C5B7E2 /* Resources */,
+				0C44133B9BF2866FE844CE0E /* [CP] Embed Pods Frameworks */,
+				F6C4B68F320E7940AA8D37EE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -130,13 +214,83 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0C44133B9BF2866FE844CE0E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CMGO/Pods-CMGO-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CMGO/Pods-CMGO-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CMGO/Pods-CMGO-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BC7F8DBC71AE20B7D2C70E91 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CMGO-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F6C4B68F320E7940AA8D37EE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CMGO/Pods-CMGO-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CMGO/Pods-CMGO-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CMGO/Pods-CMGO-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FC34BD03230BA67400C5B7E2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC63A5952318E9B5002B201E /* LoginViewController.swift in Sources */,
+				FC4D11D8231A15B300AD08E2 /* ContactoViewController.swift in Sources */,
+				FCA0AEAF23161410003BC16F /* EventosViewController.swift in Sources */,
+				FC73A38A231EAB760003751B /* TestDate.swift in Sources */,
+				FCA0AEAA231604FE003BC16F /* Slide.swift in Sources */,
 				FC34BD0D230BA67400C5B7E2 /* ViewController.swift in Sources */,
+				FC73A388231EAA3C0003751B /* Test.swift in Sources */,
+				FC73A38D231EB4980003751B /* TestTableViewCell.swift in Sources */,
 				FC34BD0B230BA67400C5B7E2 /* AppDelegate.swift in Sources */,
+				FCA0AEB52316148E003BC16F /* VigenciaViewController.swift in Sources */,
+				FCA0AEB323161461003BC16F /* MedicosViewController.swift in Sources */,
+				FCA0AEB123161446003BC16F /* ExamenViewController.swift in Sources */,
+				FCA0AEAD23160C61003BC16F /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +434,7 @@
 		};
 		FC34BD1A230BA67700C5B7E2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 01DAF0A909501F6EA05DDCE6 /* Pods-CMGO.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -298,6 +453,7 @@
 		};
 		FC34BD1B230BA67700C5B7E2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BD11CE6B6C221C821AE88B67 /* Pods-CMGO.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
