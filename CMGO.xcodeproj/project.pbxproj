@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		039F4A115092D0C7952D2A89 /* Pods_CMGO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 871F74E7642359D457C57C76 /* Pods_CMGO.framework */; };
+		FC0A444823215DC4009338A7 /* CedulaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0A444723215DC4009338A7 /* CedulaTableViewCell.swift */; };
+		FC0A444A23215F27009338A7 /* CedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0A444923215F27009338A7 /* CedTableViewCell.swift */; };
 		FC34BD0B230BA67400C5B7E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC34BD0A230BA67400C5B7E2 /* AppDelegate.swift */; };
 		FC34BD0D230BA67400C5B7E2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC34BD0C230BA67400C5B7E2 /* ViewController.swift */; };
 		FC34BD10230BA67400C5B7E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC34BD0E230BA67400C5B7E2 /* Main.storyboard */; };
@@ -15,6 +17,10 @@
 		FC34BD15230BA67700C5B7E2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC34BD13230BA67700C5B7E2 /* LaunchScreen.storyboard */; };
 		FC4D11D8231A15B300AD08E2 /* ContactoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4D11D7231A15B300AD08E2 /* ContactoViewController.swift */; };
 		FC63A5952318E9B5002B201E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC63A5942318E9B5002B201E /* LoginViewController.swift */; };
+		FC7316FA2320ACA000DF5F48 /* ExamenDetalleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7316F92320ACA000DF5F48 /* ExamenDetalleViewController.swift */; };
+		FC7316FC2320B9AD00DF5F48 /* MedicosCertificadosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7316FB2320B9AD00DF5F48 /* MedicosCertificadosViewController.swift */; };
+		FC7316FE23214CCF00DF5F48 /* CedulaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7316FD23214CCF00DF5F48 /* CedulaViewController.swift */; };
+		FC7317022321546700DF5F48 /* CedulaItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7317012321546700DF5F48 /* CedulaItem.swift */; };
 		FC73A388231EAA3C0003751B /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC73A387231EAA3C0003751B /* Test.swift */; };
 		FC73A38A231EAB760003751B /* TestDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC73A389231EAB760003751B /* TestDate.swift */; };
 		FC73A38D231EB4980003751B /* TestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC73A38C231EB4980003751B /* TestTableViewCell.swift */; };
@@ -30,6 +36,8 @@
 		01DAF0A909501F6EA05DDCE6 /* Pods-CMGO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CMGO.debug.xcconfig"; path = "Target Support Files/Pods-CMGO/Pods-CMGO.debug.xcconfig"; sourceTree = "<group>"; };
 		871F74E7642359D457C57C76 /* Pods_CMGO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CMGO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD11CE6B6C221C821AE88B67 /* Pods-CMGO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CMGO.release.xcconfig"; path = "Target Support Files/Pods-CMGO/Pods-CMGO.release.xcconfig"; sourceTree = "<group>"; };
+		FC0A444723215DC4009338A7 /* CedulaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CedulaTableViewCell.swift; sourceTree = "<group>"; };
+		FC0A444923215F27009338A7 /* CedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CedTableViewCell.swift; sourceTree = "<group>"; };
 		FC34BD07230BA67400C5B7E2 /* CMGO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CMGO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC34BD0A230BA67400C5B7E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FC34BD0C230BA67400C5B7E2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -39,6 +47,10 @@
 		FC34BD16230BA67700C5B7E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC4D11D7231A15B300AD08E2 /* ContactoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactoViewController.swift; sourceTree = "<group>"; };
 		FC63A5942318E9B5002B201E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		FC7316F92320ACA000DF5F48 /* ExamenDetalleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamenDetalleViewController.swift; sourceTree = "<group>"; };
+		FC7316FB2320B9AD00DF5F48 /* MedicosCertificadosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicosCertificadosViewController.swift; sourceTree = "<group>"; };
+		FC7316FD23214CCF00DF5F48 /* CedulaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CedulaViewController.swift; sourceTree = "<group>"; };
+		FC7317012321546700DF5F48 /* CedulaItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CedulaItem.swift; sourceTree = "<group>"; };
 		FC73A387231EAA3C0003751B /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		FC73A389231EAB760003751B /* TestDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDate.swift; sourceTree = "<group>"; };
 		FC73A38C231EB4980003751B /* TestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTableViewCell.swift; sourceTree = "<group>"; };
@@ -111,10 +123,13 @@
 				FC34BD16230BA67700C5B7E2 /* Info.plist */,
 				FCA0AEAE23161410003BC16F /* EventosViewController.swift */,
 				FCA0AEB023161446003BC16F /* ExamenViewController.swift */,
+				FC7316F92320ACA000DF5F48 /* ExamenDetalleViewController.swift */,
 				FCA0AEB223161461003BC16F /* MedicosViewController.swift */,
 				FCA0AEB42316148E003BC16F /* VigenciaViewController.swift */,
 				FC63A5942318E9B5002B201E /* LoginViewController.swift */,
 				FC4D11D7231A15B300AD08E2 /* ContactoViewController.swift */,
+				FC7316FB2320B9AD00DF5F48 /* MedicosCertificadosViewController.swift */,
+				FC7316FD23214CCF00DF5F48 /* CedulaViewController.swift */,
 			);
 			path = CMGO;
 			sourceTree = "<group>";
@@ -123,6 +138,8 @@
 			isa = PBXGroup;
 			children = (
 				FC73A38C231EB4980003751B /* TestTableViewCell.swift */,
+				FC0A444723215DC4009338A7 /* CedulaTableViewCell.swift */,
+				FC0A444923215F27009338A7 /* CedTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -133,6 +150,7 @@
 				FCA0AEA9231604FE003BC16F /* Slide.swift */,
 				FC73A387231EAA3C0003751B /* Test.swift */,
 				FC73A389231EAB760003751B /* TestDate.swift */,
+				FC7317012321546700DF5F48 /* CedulaItem.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -280,16 +298,22 @@
 			files = (
 				FC63A5952318E9B5002B201E /* LoginViewController.swift in Sources */,
 				FC4D11D8231A15B300AD08E2 /* ContactoViewController.swift in Sources */,
+				FC7316FE23214CCF00DF5F48 /* CedulaViewController.swift in Sources */,
 				FCA0AEAF23161410003BC16F /* EventosViewController.swift in Sources */,
 				FC73A38A231EAB760003751B /* TestDate.swift in Sources */,
 				FCA0AEAA231604FE003BC16F /* Slide.swift in Sources */,
 				FC34BD0D230BA67400C5B7E2 /* ViewController.swift in Sources */,
+				FC7316FA2320ACA000DF5F48 /* ExamenDetalleViewController.swift in Sources */,
+				FC0A444A23215F27009338A7 /* CedTableViewCell.swift in Sources */,
 				FC73A388231EAA3C0003751B /* Test.swift in Sources */,
 				FC73A38D231EB4980003751B /* TestTableViewCell.swift in Sources */,
 				FC34BD0B230BA67400C5B7E2 /* AppDelegate.swift in Sources */,
+				FC0A444823215DC4009338A7 /* CedulaTableViewCell.swift in Sources */,
+				FC7316FC2320B9AD00DF5F48 /* MedicosCertificadosViewController.swift in Sources */,
 				FCA0AEB52316148E003BC16F /* VigenciaViewController.swift in Sources */,
 				FCA0AEB323161461003BC16F /* MedicosViewController.swift in Sources */,
 				FCA0AEB123161446003BC16F /* ExamenViewController.swift in Sources */,
+				FC7317022321546700DF5F48 /* CedulaItem.swift in Sources */,
 				FCA0AEAD23160C61003BC16F /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

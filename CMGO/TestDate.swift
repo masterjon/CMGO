@@ -12,6 +12,16 @@ struct TestDate{
     let timeStart:String
     let timeEnd:String
     
+    func isUpcommingEvent()->Bool{
+        let apiFormatter = apiDateFormatter()
+        if let date = apiFormatter.date(from: self.date){
+            if date > Date(){
+                return true
+            }
+        }
+        return false
+        
+    }
     func formatedDate()->String{
         let apiFormatter = apiDateFormatter()
         let defaultFormatter = defaultDateFormatter()
@@ -24,7 +34,7 @@ struct TestDate{
         let apiTimeF = apiTimeFormatter()
         let defaultTimeF = defaultTimeFormatter()
         if let start = apiTimeF.date(from: self.timeStart), let end = apiTimeF.date(from: self.timeEnd){
-            return "\(defaultTimeF.string(from: start))-\(defaultTimeF.string(from: end))"
+            return "\(defaultTimeF.string(from: start)) - \(defaultTimeF.string(from: end)) hrs."
         }
         return ""
     }

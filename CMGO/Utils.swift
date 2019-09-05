@@ -67,7 +67,18 @@ func apiTimeFormatter()-> DateFormatter{
 
 func defaultTimeFormatter()-> DateFormatter{
     let dateFormater = DateFormatter()
-    dateFormater.dateFormat = "h:mm a"
+    dateFormater.dateFormat = "H:mm"
     dateFormater.locale = Locale(identifier: Settings.locale)
     return dateFormater
+}
+
+class RoundedCornersView: UIView{
+    
+    override func awakeFromNib() {
+        self.clipsToBounds = true
+        let radius = self.frame.height / 2
+        layer.cornerRadius = radius
+        
+    }
+    
 }

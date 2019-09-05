@@ -19,15 +19,25 @@ class ExamenViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let vc = self.storyboard!.instantiateViewController(withIdentifier: "LoginVC")
-        present(vc,animated: true,completion:{ () in
-            self.getRemoteTests()
-        } )
+//        let vc = self.storyboard!.instantiateViewController(withIdentifier: "LoginVC")
+//        present(vc,animated: true,completion:{ () in
+//            self.getRemoteTests()
+//        } )
         
+        getRemoteTests()
         // Do any additional setup after loading the view.
     }
     
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let indexPath = tableView.indexPathForSelectedRow{
+            let test = testList[indexPath.section]
+            let date = test.dates[indexPath.row]
+            let vc = segue.destination as! ExamenDetalleViewController
+            vc.test = test
+            vc.date = date
+        }
+    }
     
     func getRemoteTests(){
         guard let token = getUserToken() else{ return}
@@ -41,13 +51,22 @@ class ExamenViewController: UIViewController {
                 let json = JSON(value)
                 if json["status"].boolValue{
                     for test in json["msg"].arrayValue{
+                        print(test["id"].stringValue)
+                        if test["id_sede"].stringValue == "64" {
+                            continue
+                        }
                         var dates = [TestDate]()
                         for date in test["fechas"].arrayValue{
                             let dateItem = TestDate(date: date["fecha"].stringValue, timeStart: date["hora_inicio"].stringValue, timeEnd: date["hora_fin"].stringValue)
-                            dates.append(dateItem)
+                            if dateItem.isUpcommingEvent(){
+                                dates.append(dateItem)
+                            }
                         }
                         let testItem = Test(id: test["id_sede"].stringValue, lat:test["latitud"].floatValue , lang: test["longitud"].floatValue, location: test["sede"].stringValue, state: test["estado"].stringValue, region: test["municipio"].stringValue, address:test["direccion"].stringValue, capacity: test["cupo"].stringValue, dates: dates)
-                        self.testList.append(testItem)
+                        if !testItem.dates.isEmpty{
+                            self.testList.append(testItem)
+                        }
+                        
                     }
                 }
                 self.tableView.reloadData()
