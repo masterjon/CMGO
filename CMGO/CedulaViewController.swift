@@ -16,6 +16,7 @@ class CedulaViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var itemList = [CedulaItem]()
     var total = 0
+    var delegate:TabDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
         getScore()
@@ -58,6 +59,10 @@ class CedulaViewController: UIViewController {
             }
             
         }
+    }
+    @IBAction func showQRTab(_ sender: UIButton) {
+        print("btn")
+        delegate?.changeTab(index: 1)
     }
 }
 

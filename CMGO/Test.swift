@@ -16,5 +16,34 @@ struct Test {
     let region:String
     let address:String
     let capacity:String
-    let dates : [TestDate]
+    let date:String
+    let timeStart:String
+    let timeEnd:String
+    
+    func isUpcommingEvent()->Bool{
+        let apiFormatter = apiDateFormatter()
+        if let date = apiFormatter.date(from: self.date){
+            if date > Date(){
+                return true
+            }
+        }
+        return false
+        
+    }
+    func formatedDate()->String{
+        let apiFormatter = apiDateFormatter()
+        let defaultFormatter = defaultDateFormatter()
+        if let date = apiFormatter.date(from: self.date){
+            return defaultFormatter.string(from: date)
+        }
+        return ""
+    }
+    func formatedTimeRange()->String{
+        let apiTimeF = apiTimeFormatter()
+        let defaultTimeF = defaultTimeFormatter()
+        if let start = apiTimeF.date(from: self.timeStart), let end = apiTimeF.date(from: self.timeEnd){
+            return "\(defaultTimeF.string(from: start)) - \(defaultTimeF.string(from: end)) hrs."
+        }
+        return ""
+    }
 }

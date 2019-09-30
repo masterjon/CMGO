@@ -1,14 +1,14 @@
 //
-//  VigenciaViewController.swift
+//  InstructionsViewController.swift
 //  CMGO
 //
-//  Created by Jonathan Horta on 8/27/19.
+//  Created by Jonathan Horta on 9/28/19.
 //  Copyright © 2019 iddeas. All rights reserved.
 //
 
 import UIKit
 
-class VigenciaViewController: UIViewController {
+class InstructionsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,4 +27,7 @@ class VigenciaViewController: UIViewController {
     }
     */
 
+    @IBAction func closeBtn(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
 }

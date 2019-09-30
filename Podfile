@@ -10,7 +10,8 @@ target 'CMGO' do
   pod 'Firebase/Core'
   pod 'Firebase/Messaging'
   pod 'GoogleMaps'
-#  pod 'SideMenu'
+  pod 'Tabman', '~> 2.4'
+  pod 'SideMenu'
 #  pod 'Segmentio'
   pod 'ImageSlideshow', '~> 1.8'
   pod "ImageSlideshow/Alamofire"

@@ -2,6 +2,7 @@ PODS:
   - Alamofire (4.8.2)
   - AlamofireImage (3.5.2):
     - Alamofire (~> 4.8)
+  - AutoInsetter (1.8.0)
   - Firebase/Core (6.1.0):
     - Firebase/CoreOnly
     - FirebaseAnalytics (= 6.0.1)
@@ -77,8 +78,13 @@ PODS:
     - nanopb/encode (= 0.3.901)
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
+  - Pageboy (3.4.0)
   - Protobuf (3.8.0)
+  - SideMenu (6.4.2)
   - SwiftyJSON (5.0.0)
+  - Tabman (2.6.1):
+    - AutoInsetter (~> 1.8.0)
+    - Pageboy (~> 3.4.0)
 
 DEPENDENCIES:
   - Alamofire
@@ -88,12 +94,15 @@ DEPENDENCIES:
   - ImageSlideshow (~> 1.8)
   - ImageSlideshow/Alamofire
   - KeychainAccess
+  - SideMenu
   - SwiftyJSON
+  - Tabman (~> 2.4)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - AlamofireImage
+    - AutoInsetter
     - Firebase
     - FirebaseAnalytics
     - FirebaseAnalyticsInterop
@@ -106,12 +115,16 @@ SPEC REPOS:
     - ImageSlideshow
     - KeychainAccess
     - nanopb
+    - Pageboy
     - Protobuf
+    - SideMenu
     - SwiftyJSON
+    - Tabman
 
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
   AlamofireImage: 63cfe3baf1370be6c498149687cf6db3e3b00999
+  AutoInsetter: 0b90ca74e36561c340129045a3722c51a0b15c58
   Firebase: 8d77bb33624ae9b62d745d82ec023de5f70f7e4f
   FirebaseAnalytics: 629301c2b9925f3537d4093a17a72751ae5b7084
   FirebaseAnalyticsInterop: efbe45c8385ec626e29f9525e5ebd38520dfb6c1
@@ -124,9 +137,12 @@ SPEC CHECKSUMS:
   ImageSlideshow: 197130fe349aafa9446f54277c792551d41eadf9
   KeychainAccess: 3b1bf8a77eb4c6ea1ce9404c292e48f948954c6b
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
+  Pageboy: fd23a9b9e8156f4fac62731637f5d6f7d1e1c3aa
   Protobuf: 3f617b9a6e73605565086864c9bc26b2bf2dd5a3
+  SideMenu: 393b7e245d465d7b65bf209d3263eb3f62a199db
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
+  Tabman: 2a8d767aa8c791617787f1567bdf081caf8835db
 
-PODFILE CHECKSUM: c2372772ddf8f83a9bfa26eba6f6a6daab452fae
+PODFILE CHECKSUM: fb792026d32648df838874427c5532d2e3221acb
 
 COCOAPODS: 1.7.0

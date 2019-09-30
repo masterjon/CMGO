@@ -10,6 +10,7 @@ import UIKit
 
 class TestTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     override func awakeFromNib() {

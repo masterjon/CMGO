@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Tabman
 import KeychainAccess
 
 final class Settings{
@@ -81,4 +82,22 @@ class RoundedCornersView: UIView{
         
     }
     
+}
+
+func createTopTabBar()->TMBarView<TMHorizontalBarLayout, TMLabelBarButton, TMLineBarIndicator> {
+    let bar = TMBar.ButtonBar()
+    bar.layout.transitionStyle = .progressive
+    
+    bar.backgroundView.style = .flat(color: ColorPalette.DarkGreen)
+    bar.indicator.tintColor = ColorPalette.LightGreen
+    bar.indicator.weight = .heavy
+    bar.layout.contentMode = .fit
+    bar.buttons.customize { (button) in
+        button.tintColor = ColorPalette.SystemGray2
+        button.font = .systemFont(ofSize: 17)
+        button.selectedTintColor = .white
+        button.selectedFont = .boldSystemFont(ofSize: 17)
+        
+    }
+    return bar
 }

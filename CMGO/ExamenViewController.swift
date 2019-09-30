@@ -31,11 +31,9 @@ class ExamenViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let indexPath = tableView.indexPathForSelectedRow{
-            let test = testList[indexPath.section]
-            let date = test.dates[indexPath.row]
+            let test = testList[indexPath.row]
             let vc = segue.destination as! ExamenDetalleViewController
             vc.test = test
-            vc.date = date
         }
     }
     
@@ -55,17 +53,11 @@ class ExamenViewController: UIViewController {
                         if test["id_sede"].stringValue == "64" {
                             continue
                         }
-                        var dates = [TestDate]()
-                        for date in test["fechas"].arrayValue{
-                            let dateItem = TestDate(date: date["fecha"].stringValue, timeStart: date["hora_inicio"].stringValue, timeEnd: date["hora_fin"].stringValue)
-                            if dateItem.isUpcommingEvent(){
-                                dates.append(dateItem)
-                            }
-                        }
-                        let testItem = Test(id: test["id_sede"].stringValue, lat:test["latitud"].floatValue , lang: test["longitud"].floatValue, location: test["sede"].stringValue, state: test["estado"].stringValue, region: test["municipio"].stringValue, address:test["direccion"].stringValue, capacity: test["cupo"].stringValue, dates: dates)
-                        if !testItem.dates.isEmpty{
-                            self.testList.append(testItem)
-                        }
+                        let testItem = Test(id: test["id_sede"].stringValue, lat:test["latitud"].floatValue , lang: test["longitud"].floatValue, location: test["sede"].stringValue, state: test["estado"].stringValue, region: test["municipio"].stringValue, address:test["direccion"].stringValue, capacity: test["cupo"].stringValue, date: test["fecha"].stringValue,
+                            timeStart:test["hora_inicio"].stringValue,
+                            timeEnd: test["hora_fin"].stringValue)
+                        
+                        self.testList.append(testItem)
                         
                     }
                 }
@@ -93,22 +85,17 @@ class ExamenViewController: UIViewController {
 }
 extension ExamenViewController : UITableViewDataSource{
     
-    func numberOfSections(in tableView: UITableView) -> Int {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return testList.count
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return testList[section].dates.count
-    }
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return testList[section].location
-    }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! TestTableViewCell
-        let test = testList[indexPath.section]
-        let dateItem = test.dates[indexPath.row]
-        cell.dateLabel.text = dateItem.formatedDate()
-        cell.timeLabel.text = dateItem.formatedTimeRange()
+        let test = testList[indexPath.row]
+        cell.titleLabel.text = test.location
+        cell.dateLabel.text = test.formatedDate()
+        cell.timeLabel.text = test.formatedTimeRange()
         return cell
     }
 }

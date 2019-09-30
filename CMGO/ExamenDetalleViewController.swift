@@ -22,8 +22,8 @@ class ExamenDetalleViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         titleLabel.text = test.location
-        dateLabel.text = date.formatedDate()
-        timeLabel.text = date.formatedTimeRange()
+        dateLabel.text = test.formatedDate()
+        timeLabel.text = test.formatedTimeRange()
         recintoLabel.text = test.region
         direccionLabel.text = test.address
     }
