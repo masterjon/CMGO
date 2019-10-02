@@ -14,6 +14,7 @@ class MedicosCertificadosViewController: UIViewController, UIWebViewDelegate{
     @IBOutlet weak var webView: UIWebView!
     override func viewDidLoad() {
         super.viewDidLoad()
+       self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "P3-1"),for: .default)
         webView.loadRequest(URLRequest(url: URL(string: "https://cmgo.org.mx/core/index.php/medicos_certificados")!))
         // Do any additional setup after loading the view.
     }

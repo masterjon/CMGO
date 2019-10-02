@@ -45,6 +45,11 @@ func getUserToken()->String?{
     return nil
 }
 
+func deleteUserToken(){
+    let keychain = Keychain()
+    keychain["token"] = nil
+}
+
 func apiDateFormatter()-> DateFormatter{
     let dateFormater = DateFormatter()
     dateFormater.dateFormat = "yyyy-MM-dd"
@@ -69,6 +74,13 @@ func apiTimeFormatter()-> DateFormatter{
 func defaultTimeFormatter()-> DateFormatter{
     let dateFormater = DateFormatter()
     dateFormater.dateFormat = "H:mm"
+    dateFormater.locale = Locale(identifier: Settings.locale)
+    return dateFormater
+}
+
+func monthDateFormatter()-> DateFormatter{
+    let dateFormater = DateFormatter()
+    dateFormater.dateFormat = "d MMM"
     dateFormater.locale = Locale(identifier: Settings.locale)
     return dateFormater
 }

@@ -19,7 +19,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "P3-1"),for: .default)
-        getSlides()
+        deleteUserToken()
+        //getSlides()
         
         
 

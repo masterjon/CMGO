@@ -17,7 +17,7 @@ class ContactoViewController: UIViewController {
     let zoom = Float(17.0)
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "P3-1"),for: .default)
         // Do any additional setup after loading the view.
     }
     override func viewDidAppear(_ animated: Bool) {

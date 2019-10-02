@@ -38,12 +38,8 @@ class ExamenViewController: UIViewController {
     }
     
     func getRemoteTests(){
-        guard let token = getUserToken() else{ return}
-        
-        let postData : [String:String] = [
-                "cmgo_user_token": token,
-            ]
-        Alamofire.request("https://cmgo.org.mx/core/index.php/api/v1/Services/sedes", method: .post, parameters: postData, headers:getHttpHeaders()).validate().responseJSON { (response) in
+
+        Alamofire.request("https://cmgo.org.mx/core/index.php/api/v1/Services/sedes", headers:getHttpHeaders()).validate().responseJSON { (response) in
             switch response.result{
             case .success(let value):
                 let json = JSON(value)

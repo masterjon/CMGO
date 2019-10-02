@@ -18,6 +18,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var passwordTextField: UITextField!
     let loginUrl = "https://cmgo.org.mx/core/index.php/api/v1/Services/login"
     let keychain = Keychain()
+    var delegate : TabDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,7 +67,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     if let token = json["msg"]["cmgo_user_token"].string{
                         print(token)
                         self.keychain["token"] = token
-                        self.dismiss(animated: true)
+                        self.dismiss(animated: true, completion: {
+                            self.delegate?.changeTab(index: 1)
+                            print("dismiss")
+                        })
 //                        let postData2 = [
 //                            "cmgo_user_token": token,
 //                        ]
@@ -88,6 +92,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    @IBAction func closeView(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: {
+            self.delegate?.changeTab(index: 0)
+        })
+    }
     /*
     // MARK: - Navigation
 
