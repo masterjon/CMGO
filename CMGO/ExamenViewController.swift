@@ -38,7 +38,6 @@ class ExamenViewController: UIViewController {
     }
     
     func getRemoteTests(){
-
         Alamofire.request("https://cmgo.org.mx/core/index.php/api/v1/Services/sedes", headers:getHttpHeaders()).validate().responseJSON { (response) in
             switch response.result{
             case .success(let value):

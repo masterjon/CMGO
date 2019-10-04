@@ -15,7 +15,7 @@ class ExamenTabViewController: TabmanViewController, TabDelegate {
     
     let storyBoard = UIStoryboard(name: "Main", bundle: nil)
     var viewControllers = [UIViewController]()
-    let barTitles = ["Clendario", "Examen de Certificación"]
+    let barTitles = ["Calendario", "Examen de Certificación"]
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -29,6 +29,7 @@
 		FC4BED232344F3EF000A7A88 /* AreasOportunidadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4BED222344F3EF000A7A88 /* AreasOportunidadViewController.swift */; };
 		FC4BED252344F6B0000A7A88 /* Area.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4BED242344F6B0000A7A88 /* Area.swift */; };
 		FC4D11D8231A15B300AD08E2 /* ContactoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4D11D7231A15B300AD08E2 /* ContactoViewController.swift */; };
+		FC5EB2C32345868300B57069 /* TemaParent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5EB2C22345868300B57069 /* TemaParent.swift */; };
 		FC63A5952318E9B5002B201E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC63A5942318E9B5002B201E /* LoginViewController.swift */; };
 		FC7316FA2320ACA000DF5F48 /* ExamenDetalleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7316F92320ACA000DF5F48 /* ExamenDetalleViewController.swift */; };
 		FC7316FC2320B9AD00DF5F48 /* MedicosCertificadosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7316FB2320B9AD00DF5F48 /* MedicosCertificadosViewController.swift */; };
@@ -76,6 +77,7 @@
 		FC4BED222344F3EF000A7A88 /* AreasOportunidadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreasOportunidadViewController.swift; sourceTree = "<group>"; };
 		FC4BED242344F6B0000A7A88 /* Area.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Area.swift; sourceTree = "<group>"; };
 		FC4D11D7231A15B300AD08E2 /* ContactoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactoViewController.swift; sourceTree = "<group>"; };
+		FC5EB2C22345868300B57069 /* TemaParent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemaParent.swift; sourceTree = "<group>"; };
 		FC63A5942318E9B5002B201E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		FC7316F92320ACA000DF5F48 /* ExamenDetalleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamenDetalleViewController.swift; sourceTree = "<group>"; };
 		FC7316FB2320B9AD00DF5F48 /* MedicosCertificadosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicosCertificadosViewController.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 				FC4BED1C23446DB2000A7A88 /* Evento.swift */,
 				FC4BED1E23447191000A7A88 /* Tema.swift */,
 				FC4BED242344F6B0000A7A88 /* Area.swift */,
+				FC5EB2C22345868300B57069 /* TemaParent.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -391,6 +394,7 @@
 				FCFC02B723419D360005BACC /* BlogViewController.swift in Sources */,
 				FC73A38A231EAB760003751B /* TestDate.swift in Sources */,
 				FCA0AEAA231604FE003BC16F /* Slide.swift in Sources */,
+				FC5EB2C32345868300B57069 /* TemaParent.swift in Sources */,
 				FCFC02AB234177420005BACC /* ScannerViewController.swift in Sources */,
 				FC34BD0D230BA67400C5B7E2 /* ViewController.swift in Sources */,
 				FC7316FA2320ACA000DF5F48 /* ExamenDetalleViewController.swift in Sources */,

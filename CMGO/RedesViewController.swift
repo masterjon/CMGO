@@ -14,7 +14,7 @@ class RedesViewController: UIViewController,UIWebViewDelegate {
     @IBOutlet weak var webView: UIWebView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        webView.loadRequest(URLRequest(url: URL(string: "https://twitter.com/ConsejoGineco/")!))
+        webView.loadRequest(URLRequest(url: URL(string: "https://cmgo.iddeasapps.xyz/api/v1/social/")!))
         // Do any additional setup after loading the view.
     }
     

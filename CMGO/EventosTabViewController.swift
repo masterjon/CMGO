@@ -17,7 +17,7 @@ class EventosTabViewController: TabmanViewController {
     
     let storyBoard = UIStoryboard(name: "Main", bundle: nil)
     var viewControllers = [UIViewController]()
-    let barTitles = ["Por fecha", "Por Estado", "Por tema"]
+    let barTitles = ["Por Estado", "Por Fecha", "Por Tema"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,10 +27,14 @@ class EventosTabViewController: TabmanViewController {
         let bar = createTopTabBar()
         addBar(bar, dataSource: self, at: .top)
         
-        let eventosVC1 = self.storyBoard.instantiateViewController(withIdentifier: "EventosVC")
-        let eventosVC2 = self.storyBoard.instantiateViewController(withIdentifier: "EventosVC")
+        let eventosVC1 = self.storyBoard.instantiateViewController(withIdentifier: "EventosVC") as! EventosViewController
+        eventosVC1.listType = .byState
         
-        let eventosVC3 = self.storyBoard.instantiateViewController(withIdentifier: "EventosVC")
+        let eventosVC2 = self.storyBoard.instantiateViewController(withIdentifier: "EventosVC") as! EventosViewController
+        eventosVC2.listType = .byDate
+        
+        let eventosVC3 = self.storyBoard.instantiateViewController(withIdentifier: "EventosVC") as! EventosViewController
+        eventosVC3.listType = .byTopic
         
         self.viewControllers.append(eventosVC1)
         self.viewControllers.append(eventosVC2)
