@@ -30,7 +30,11 @@ class VigenciaTabViewController: TabmanViewController,TabDelegate {
             present(vc,animated: true,completion:{self.loginShown=true} )
         }
         else if getUserToken() == nil && loginShown{
-            navigationController?.popViewController(animated: true)
+            let vc = navigationController?.popViewController(animated: true)
+            if vc == nil{
+                let home = self.storyBoard.instantiateViewController(withIdentifier: "InicioNVC")
+                present(home,animated: true)
+            }
         }
         else{
             
@@ -45,9 +49,7 @@ class VigenciaTabViewController: TabmanViewController,TabDelegate {
             
         }
     }
-    
-    
-    
+
     func changeTab(index:Int){
         print("tab chang")
         self.scrollToPage(.at(index: index), animated: true)

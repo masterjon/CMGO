@@ -11,7 +11,7 @@ import UIKit
 class MenuViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-    let items = [
+    var items = [
         ["icon":"P5-R1", "title":"Inicio", "vc":"InicioNVC"],
         ["icon":"P5-R3", "title":"Eventos con puntaje", "vc":"EventosNVC"],
         ["icon":"P5-R4", "title":"Mi agenda", "vc":"MiAgendaNVC"],
@@ -19,11 +19,14 @@ class MenuViewController: UIViewController {
         ["icon":"P5-R7", "title":"Vigencia de Certificación", "vc":"VigenciaNVC"],
         ["icon":"P5-R8", "title":"Médicos Certificados", "vc":"MedicosNVC"],
         ["icon":"P5-R9", "title":"Noticias", "vc":"NoticiasNVC"],
-        ["icon":"P5-R10", "title":"Contactos", "vc":"ContactoNVC"]
+        ["icon":"P5-R10", "title":"Contacto", "vc":"ContactoNVC"]
     ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if getUserToken() != nil{
+            items.append(["icon":"logout1", "title":"Cerrar sesión", "vc":"LogoutVC"])
+        }
 
     }
     
@@ -47,6 +50,7 @@ extension MenuViewController: UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let vcTitle = items[indexPath.row]["vc"] else{return}
+         print(self.parent?.restorationIdentifier)
         let nvc = self.storyboard!.instantiateViewController(withIdentifier: vcTitle)
         present(nvc, animated: false, completion: nil)
     }

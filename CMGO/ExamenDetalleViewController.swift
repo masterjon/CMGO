@@ -21,14 +21,17 @@ class ExamenDetalleViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        titleLabel.text = test.location
+        titleLabel.text = test.sede
         dateLabel.text = test.formatedDate()
         timeLabel.text = test.formatedTimeRange()
-        recintoLabel.text = test.region
-        direccionLabel.text = test.address
+        recintoLabel.text = test.sede
+        direccionLabel.text = test.direccion
     }
     
 
+    @IBAction func addEvent(_ sender: UIButton) {
+        
+    }
     /*
     // MARK: - Navigation
 

@@ -31,6 +31,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func url(_ sender: UIButton) {
+        openUrl("https://cmgo.org.mx/core/index.php/login")
+    }
     @objc func dismissKeyboard(){
         self.usernameTextField.resignFirstResponder()
         self.passwordTextField.resignFirstResponder()

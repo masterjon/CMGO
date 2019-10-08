@@ -9,6 +9,7 @@
 import Foundation
 struct Evento:Codable{
     let id_evento:String
+    let nombre_evento:String
     let correo:String
     let estado:String
     let municipio:String
@@ -18,7 +19,7 @@ struct Evento:Codable{
     let direccion:String
     let telefono:String
     let nombre_institucion:String
-    let temas : [Tema]
+    let temas : [Tema]?
     
     func formatedDateStart()->String{
         let apiFormatter = apiDateFormatter()

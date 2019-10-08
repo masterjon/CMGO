@@ -26,24 +26,31 @@ class EventosViewController: UIViewController {
         super.viewDidLoad()
         switch listType! {
         case .byDate:
-            getEvents()
+            getEventsByDate()
         case .byState:
             getEvents(byState: true)
         case .byTopic:
-            getEventsbyTopic()
+            getEventsByTopic()
         }
         // Do any additional setup after loading the view.
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let indexPath = tableView.indexPathForSelectedRow{
-            let evento = events[indexPath.row]
+            let item:Evento
+            switch listType! {
+            case .byTopic,.byDate:
+                item = temaParentList[indexPath.section].events[indexPath.row]
+                
+            case .byState:
+                item = stateList[indexPath.section].events[indexPath.row]
+            }
             let vc = segue.destination as! EventoDetalleViewController
-            vc.evento = evento
+            vc.evento = item
         }
     }
     
     func getEvents(byState:Bool=false){
-        Alamofire.request("https://cmgo.org.mx/core/index.php/solicitud_puntaje/eventos_service/contenido", headers:getHttpHeaders()).validate().responseJSON { (response) in
+        Alamofire.request("https://cmgo.org.mx/core/index.php/solicitud_puntaje/eventos_service/estado/", headers:getHttpHeaders()).validate().responseJSON { (response) in
             switch response.result{
             case .success(let value):
                 let json = JSON(value)
@@ -86,8 +93,7 @@ class EventosViewController: UIViewController {
             
         }
     }
-    func getEventsbyTopic(){
-        Alamofire.request("https://cmgo.org.mx/core/index.php/solicitud_puntaje/Temas/contenido", headers:getHttpHeaders()).validate().responseJSON { (response) in
+    func getEventsByTopic(){        Alamofire.request("https://cmgo.org.mx/core/index.php/solicitud_puntaje/Temas/contenido/", headers:getHttpHeaders()).validate().responseJSON { (response) in
             switch response.result{
             case .success(let value):
                 let json = JSON(value)
@@ -109,33 +115,53 @@ class EventosViewController: UIViewController {
             }
         }
     }
+    func getEventsByDate(){        Alamofire.request("https://cmgo.org.mx/core/index.php/solicitud_puntaje/eventos_service/contenido", headers:getHttpHeaders()).validate().responseJSON { (response) in
+        switch response.result{
+        case .success(let value):
+            let json = JSON(value)
+            for tema in json["msg"].arrayValue{
+                if let data = try? tema["eventos"].rawData(){
+                    print(tema["eventos"])
+                    if let e = try? JSONDecoder().decode([Evento].self, from: data){
+                        let title = "\(tema["nombre_mes"].stringValue) \(tema["anio"].stringValue)"
+                        let temaParent = TemaParent(title: title, events: e)
+                        self.temaParentList.append(temaParent)
+                    }
+                }
+            }
+            self.tableView.reloadData()
+            print(self.events)
+            
+        case .failure(let error):
+            print(error)
+            
+        }
+        }
+    }
 }
 
 extension EventosViewController:UITableViewDataSource{
     
     func numberOfSections(in tableView: UITableView) -> Int {
         switch listType! {
-        case .byTopic:
+        case .byTopic,.byDate:
             return temaParentList.count
         case .byState:
             return stateList.count
-        case .byDate:
-            return 1
+        
         }
     }
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch listType! {
-        case .byTopic:
+        case .byTopic,.byDate:
             return temaParentList[section].title
         case .byState:
             return stateList[section].title
-        case .byDate:
-            return "Fechas"
         }
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch listType! {
-        case .byTopic:
+        case .byTopic, .byDate:
             if !temaParentList.isEmpty{
                 print("Tema count")
                 return temaParentList[section].events.count
@@ -147,10 +173,7 @@ extension EventosViewController:UITableViewDataSource{
                 return stateList[section].events.count
             }
             else{ return 0}
-        case .byDate:
-           return events.count
         }
-        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -158,18 +181,17 @@ extension EventosViewController:UITableViewDataSource{
         let item:Evento
         
         switch listType! {
-        case .byTopic:
+        case .byTopic,.byDate:
             item = temaParentList[indexPath.section].events[indexPath.row]
             
         case .byState:
             item = stateList[indexPath.section].events[indexPath.row]
-        case .byDate:
-            item = events[indexPath.row]
         }
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TestTableViewCell
-        cell.titleLabel.text = "\(item.estado), \(item.municipio)"
+        cell.titleLabel.text = item.nombre_evento
         cell.dateLabel.text = "\(item.formatedDateStart()) - \(item.formatedDateEnd())"
-        cell.timeLabel.text = ""
+        cell.timeLabel.text = "\(item.estado), \(item.municipio)"
         return cell
     }
     

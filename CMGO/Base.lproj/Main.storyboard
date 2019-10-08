@@ -13,7 +13,7 @@
         <!--Inicio-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="InicioVC" id="BYZ-38-t0r" customClass="ViewController" customModule="CMGO" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InicioVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" customModule="CMGO" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -126,7 +126,7 @@
         <!--Navigation Controller-->
         <scene sceneID="bxE-dn-kZA">
             <objects>
-                <navigationController storyboardIdentifier="InicioNVC" id="bmH-60-mnG" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="InicioNVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bmH-60-mnG" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="GNG-CN-jmA">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -399,7 +399,7 @@ Ingrese su cédula de medicina general y su contraseña para iniciar:</string>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6tJ-U1-yPt">
                                 <rect key="frame" x="20" y="761" width="374" height="71"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Para iniciar el proceso de inscripción" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nae-XO-QTW">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Si usted no tiene cuenta" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nae-XO-QTW">
                                         <rect key="frame" x="0.0" y="20" width="374" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="K5t-p6-ffP"/>
@@ -413,9 +413,12 @@ Ingrese su cédula de medicina general y su contraseña para iniciar:</string>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="4AB-bf-nXs"/>
                                         </constraints>
-                                        <state key="normal" title="Ingresa aqui">
+                                        <state key="normal" title="Creela aquí">
                                             <color key="titleColor" red="0.0039215686269999999" green="0.56470588239999997" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="url:" destination="Fx5-NS-YDj" eventType="touchUpInside" id="dYg-A6-eI5"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -512,7 +515,7 @@ Ingrese su cédula de medicina general y su contraseña para iniciar:</string>
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hV1-j6-j3L">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="750"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="769"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="P1" translatesAutoresizingMaskIntoConstraints="NO" id="zj5-KV-Cql">
                                                 <rect key="frame" x="132" y="0.0" width="150" height="150"/>
@@ -528,14 +531,14 @@ Ingrese su cédula de medicina general y su contraseña para iniciar:</string>
                                                     <constraint firstAttribute="width" secondItem="WmF-Vh-woO" secondAttribute="height" multiplier="374:227" id="CLa-rD-4C6"/>
                                                 </constraints>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WTC, Montecito 38, Nápoles, 03810 Ciudad de México, CDMX" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LAn-Ri-sSA">
-                                                <rect key="frame" x="20" y="421.5" width="374" height="38.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Montecito #38, Piso 8, Oficina 38, Col. Nápoles,Alc. Benito Juárez, C.P. 03819, Ciudad de México" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LAn-Ri-sSA">
+                                                <rect key="frame" x="20" y="421.5" width="374" height="57.5"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5fu-qz-ecW">
-                                                <rect key="frame" x="112.5" y="650" width="189" height="30"/>
+                                                <rect key="frame" x="112.5" y="669" width="189" height="30"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="P8-3" translatesAutoresizingMaskIntoConstraints="NO" id="Cwc-CR-owY">
                                                         <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
@@ -563,7 +566,7 @@ Ingrese su cédula de medicina general y su contraseña para iniciar:</string>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zab-4W-WaO">
-                                                <rect key="frame" x="126" y="700" width="162" height="30"/>
+                                                <rect key="frame" x="126" y="719" width="162" height="30"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="P8-4" translatesAutoresizingMaskIntoConstraints="NO" id="hxN-ht-GVB">
                                                         <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
@@ -591,7 +594,7 @@ Ingrese su cédula de medicina general y su contraseña para iniciar:</string>
                                                 </constraints>
                                             </view>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v6R-XF-xil">
-                                                <rect key="frame" x="20" y="480" width="374" height="150"/>
+                                                <rect key="frame" x="20" y="499" width="374" height="150"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="Teléfono: ">
@@ -726,13 +729,13 @@ Ingrese su cédula de medicina general y su contraseña para iniciar:</string>
                                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XbV-J6-fkN">
                                                             <rect key="frame" x="0.0" y="22" width="384" height="20.5"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c53-PA-2U3">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oiv-f8-fcK">
                                                                     <rect key="frame" x="0.0" y="0.0" width="192" height="20.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oiv-f8-fcK">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c53-PA-2U3">
                                                                     <rect key="frame" x="192" y="0.0" width="192" height="20.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
@@ -774,6 +777,9 @@ Ingrese su cédula de medicina general y su contraseña para iniciar:</string>
                                     <constraint firstAttribute="width" secondItem="Djy-j7-WVE" secondAttribute="height" multiplier="75:20" id="0xf-uE-7K3"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="P4-2"/>
+                                <connections>
+                                    <action selector="openLink:" destination="zfc-6e-2eQ" eventType="touchUpInside" id="wcp-g5-7E7"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -817,7 +823,7 @@ Ingrese su cédula de medicina general y su contraseña para iniciar:</string>
                                 <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vbf-t9-lJd">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="433"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="549.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3SS-yQ-fcS">
                                                 <rect key="frame" x="20" y="35" width="374" height="24"/>
@@ -906,15 +912,30 @@ Ingrese su cédula de medicina general y su contraseña para iniciar:</string>
                                                     </label>
                                                 </subviews>
                                             </stackView>
+                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="qcC-1D-lVm">
+                                                <rect key="frame" x="132" y="463" width="150" height="56.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="150" id="LPq-xK-3iH"/>
+                                                    <constraint firstAttribute="width" secondItem="qcC-1D-lVm" secondAttribute="height" multiplier="8:3" id="sSY-9u-aiR"/>
+                                                </constraints>
+                                                <state key="normal" title=" Agregar a mis eventos" image="iconp">
+                                                    <color key="titleColor" red="0.0039215686269999999" green="0.56470588239999997" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="addEvent:" destination="ssd-Py-LdX" eventType="touchUpInside" id="GfB-z6-Ck1"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="s0M-A8-MBJ" firstAttribute="top" secondItem="3SS-yQ-fcS" secondAttribute="bottom" constant="8" id="0RQ-ry-fRW"/>
                                             <constraint firstAttribute="trailing" secondItem="s0M-A8-MBJ" secondAttribute="trailing" constant="20" id="3vj-7t-JBC"/>
                                             <constraint firstItem="3SS-yQ-fcS" firstAttribute="leading" secondItem="vbf-t9-lJd" secondAttribute="leading" constant="20" id="7TW-ep-jfk"/>
-                                            <constraint firstAttribute="bottom" secondItem="KDr-Ml-btq" secondAttribute="bottom" constant="20" id="MsP-2E-lVG"/>
+                                            <constraint firstItem="qcC-1D-lVm" firstAttribute="top" secondItem="KDr-Ml-btq" secondAttribute="bottom" constant="50" id="D5W-m1-gKE"/>
+                                            <constraint firstItem="qcC-1D-lVm" firstAttribute="centerX" secondItem="vbf-t9-lJd" secondAttribute="centerX" id="GcU-1v-Paq"/>
                                             <constraint firstItem="KDr-Ml-btq" firstAttribute="top" secondItem="s0M-A8-MBJ" secondAttribute="bottom" constant="40" id="OdR-EE-MyY"/>
                                             <constraint firstItem="KDr-Ml-btq" firstAttribute="leading" secondItem="vbf-t9-lJd" secondAttribute="leading" constant="20" id="Tiw-fd-xB4"/>
+                                            <constraint firstAttribute="bottom" secondItem="qcC-1D-lVm" secondAttribute="bottom" constant="30" id="Xow-0Z-Ib6"/>
                                             <constraint firstAttribute="trailing" secondItem="KDr-Ml-btq" secondAttribute="trailing" constant="20" id="gqu-S1-GK2"/>
                                             <constraint firstItem="s0M-A8-MBJ" firstAttribute="leading" secondItem="vbf-t9-lJd" secondAttribute="leading" constant="20" id="nif-vA-ge5"/>
                                             <constraint firstItem="3SS-yQ-fcS" firstAttribute="top" secondItem="vbf-t9-lJd" secondAttribute="top" constant="35" id="tIa-qj-kD5"/>
@@ -950,7 +971,7 @@ Ingrese su cédula de medicina general y su contraseña para iniciar:</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Olk-nJ-Ssq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-623" y="2178"/>
+            <point key="canvasLocation" x="-623.1884057971015" y="2177.0089285714284"/>
         </scene>
         <!--Areas Oportunidad View Controller-->
         <scene sceneID="sBh-zH-zS0">
@@ -1170,7 +1191,7 @@ Ingrese su cédula de medicina general y su contraseña para iniciar:</string>
                                                                 <constraint firstItem="IqE-wT-JEl" firstAttribute="centerX" secondItem="KAT-bb-gI6" secondAttribute="centerX" id="uM4-Uc-m9D"/>
                                                             </constraints>
                                                         </view>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U2G-E7-pom">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U2G-E7-pom">
                                                             <rect key="frame" x="63" y="16" width="250" height="50"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                             <color key="textColor" red="0.0" green="0.4039215686" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -1701,7 +1722,7 @@ Ingrese su cédula de medicina general y su contraseña para iniciar:</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Op2-zf-fV4">
-                                <rect key="frame" x="0.0" y="44" width="414" height="698.5"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="698"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="delegate" destination="iTI-aA-xPL" id="HXK-18-egD"/>
@@ -1712,10 +1733,10 @@ Ingrese su cédula de medicina general y su contraseña para iniciar:</string>
                                 <color key="color" red="0.4039215686" green="0.63921568630000003" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uSK-Jk-Jgs">
-                                <rect key="frame" x="30" y="772.5" width="354" height="39.5"/>
+                                <rect key="frame" x="30" y="772" width="354" height="40"/>
                                 <color key="backgroundColor" red="0.0039215686269999999" green="0.56470588239999997" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="uSK-Jk-Jgs" secondAttribute="height" multiplier="9:1" id="yB5-aU-sZX"/>
+                                    <constraint firstAttribute="height" constant="40" id="T5U-OJ-PxH"/>
                                 </constraints>
                                 <state key="normal" title="Mi Áreas de Oportunidad">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1783,13 +1804,13 @@ Ingrese su cédula de medicina general y su contraseña para iniciar:</string>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="8Z4-27-qax">
                                                             <rect key="frame" x="0.0" y="22" width="384" height="20.5"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uLd-L9-1Gi">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z61-bO-MVh">
                                                                     <rect key="frame" x="0.0" y="0.0" width="192" height="20.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z61-bO-MVh">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uLd-L9-1Gi">
                                                                     <rect key="frame" x="192" y="0.0" width="192" height="20.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
@@ -1852,7 +1873,7 @@ Ingrese su cédula de medicina general y su contraseña para iniciar:</string>
                                 <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nH2-Ct-ndz">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="518"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="605.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z5G-hk-Y0W">
                                                 <rect key="frame" x="20" y="35" width="374" height="24"/>
@@ -1867,93 +1888,126 @@ Ingrese su cédula de medicina general y su contraseña para iniciar:</string>
                                                     <constraint firstAttribute="height" constant="2" id="p6t-9l-E2J"/>
                                                 </constraints>
                                             </view>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="YRy-JU-Xel">
-                                                <rect key="frame" x="20" y="109" width="374" height="389"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="YRy-JU-Xel">
+                                                <rect key="frame" x="20" y="109" width="374" height="476.5"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Responsable:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YAV-a3-lbJ">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fechas:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZQO-0p-Upd">
                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qm8-Ln-PHb">
+                                                        <rect key="frame" x="0.0" y="25.5" width="374" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NEG-5I-piL">
+                                                        <rect key="frame" x="0.0" y="51" width="374" height="20"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="20" id="fva-D2-8Qt"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Responsable:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YAV-a3-lbJ">
+                                                        <rect key="frame" x="0.0" y="76" width="374" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uu2-Iz-aSe">
-                                                        <rect key="frame" x="0.0" y="28.5" width="374" height="20.5"/>
+                                                        <rect key="frame" x="0.0" y="101.5" width="374" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WI8-ir-Xpr">
-                                                        <rect key="frame" x="0.0" y="57" width="374" height="20"/>
+                                                        <rect key="frame" x="0.0" y="127" width="374" height="20"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="20" id="0eJ-gK-AiL"/>
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Organiza:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F7B-u2-BmF">
-                                                        <rect key="frame" x="0.0" y="85" width="374" height="20.5"/>
+                                                        <rect key="frame" x="0.0" y="152" width="374" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6op-Hy-8UH">
-                                                        <rect key="frame" x="0.0" y="113.5" width="374" height="20.5"/>
+                                                        <rect key="frame" x="0.0" y="177.5" width="374" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uj8-3B-0lG">
-                                                        <rect key="frame" x="0.0" y="142" width="374" height="20"/>
+                                                        <rect key="frame" x="0.0" y="203" width="374" height="20"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="20" id="idF-B0-xDF"/>
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contacto:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="liE-uc-L9a">
-                                                        <rect key="frame" x="0.0" y="170" width="374" height="20.5"/>
+                                                        <rect key="frame" x="0.0" y="228" width="374" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y7T-jg-kfK">
-                                                        <rect key="frame" x="0.0" y="198.5" width="374" height="20.5"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gXk-W9-g07">
+                                                        <rect key="frame" x="0.0" y="253.5" width="374" height="33"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <state key="normal">
+                                                            <color key="titleColor" red="0.0039215686269999999" green="0.56470588239999997" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="openMail:" destination="KQK-4b-c3a" eventType="touchUpInside" id="bln-JL-mse"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b8J-qp-6mO">
+                                                        <rect key="frame" x="0.0" y="291.5" width="374" height="33"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <state key="normal">
+                                                            <color key="titleColor" red="0.0039215686269999999" green="0.56470588239999997" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="openphone:" destination="KQK-4b-c3a" eventType="touchUpInside" id="1OM-e5-Pjg"/>
+                                                        </connections>
+                                                    </button>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Az-Ha-r6h">
+                                                        <rect key="frame" x="0.0" y="329.5" width="374" height="20"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="20" id="YOl-BV-NWD"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sede:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DRA-AD-1tb">
+                                                        <rect key="frame" x="0.0" y="354.5" width="374" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5C1-s2-Lq9">
+                                                        <rect key="frame" x="0.0" y="380" width="374" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M3A-2T-tdn">
-                                                        <rect key="frame" x="0.0" y="227" width="374" height="20"/>
+                                                        <rect key="frame" x="0.0" y="405.5" width="374" height="20"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="20" id="Dwc-Wx-aZf"/>
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dirección:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q71-So-Kjc">
-                                                        <rect key="frame" x="0.0" y="255" width="374" height="20.5"/>
+                                                        <rect key="frame" x="0.0" y="430.5" width="374" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lTM-YF-a85">
-                                                        <rect key="frame" x="0.0" y="283.5" width="374" height="20.5"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NEG-5I-piL">
-                                                        <rect key="frame" x="0.0" y="312" width="374" height="20"/>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="20" id="fva-D2-8Qt"/>
-                                                        </constraints>
-                                                    </view>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fechas:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZQO-0p-Upd">
-                                                        <rect key="frame" x="0.0" y="340" width="374" height="20.5"/>
-                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qm8-Ln-PHb">
-                                                        <rect key="frame" x="0.0" y="368.5" width="374" height="20.5"/>
+                                                        <rect key="frame" x="0.0" y="456" width="374" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -1995,17 +2049,70 @@ Ingrese su cédula de medicina general y su contraseña para iniciar:</string>
                         <viewLayoutGuide key="safeArea" id="7ZN-Wu-MVW"/>
                     </view>
                     <connections>
-                        <outlet property="contactoLabel" destination="Y7T-jg-kfK" id="Pji-qJ-gmj"/>
                         <outlet property="direccionLabel" destination="lTM-YF-a85" id="u0Z-je-kx8"/>
                         <outlet property="fechaLabel" destination="Qm8-Ln-PHb" id="i8W-IR-BmG"/>
                         <outlet property="institucionLabel" destination="6op-Hy-8UH" id="PLs-8N-grE"/>
+                        <outlet property="mailBtn" destination="gXk-W9-g07" id="o3A-7G-uIM"/>
                         <outlet property="responsableLabel" destination="Uu2-Iz-aSe" id="kCX-S0-DZG"/>
+                        <outlet property="sedeLabel" destination="5C1-s2-Lq9" id="Krc-1U-kim"/>
+                        <outlet property="telBtn" destination="b8J-qp-6mO" id="xOD-x7-gIJ"/>
                         <outlet property="titleLabel" destination="z5G-hk-Y0W" id="Uzr-QL-0yC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AwK-6m-5O0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2059" y="2177"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="LLV-Gy-jHZ">
+            <objects>
+                <navigationController id="Ktr-uN-5zd" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="evw-4d-1EN">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="0.0" green="0.4039215686" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Fl-Sy-Okb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7520" y="-260"/>
+        </scene>
+        <!--Contacto-->
+        <scene sceneID="bfV-XQ-c7c">
+            <objects>
+                <viewController storyboardIdentifier="LogoutVC" title="Contacto" id="bo2-sj-hkP" customClass="LogoutViewController" customModule="CMGO" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="b9W-ta-wxP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="LOa-tb-LFa">
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                                <color key="color" red="0.4039215686" green="0.63921568630000003" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cerrando sesión" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hRw-IO-734">
+                                <rect key="frame" x="144.5" y="483" width="125.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="hRw-IO-734" firstAttribute="centerX" secondItem="b9W-ta-wxP" secondAttribute="centerX" id="YJr-7g-h5p"/>
+                            <constraint firstItem="hRw-IO-734" firstAttribute="top" secondItem="LOa-tb-LFa" secondAttribute="bottom" constant="16.5" id="ehX-qv-LWg"/>
+                            <constraint firstItem="LOa-tb-LFa" firstAttribute="centerY" secondItem="b9W-ta-wxP" secondAttribute="centerY" id="gDq-a9-HaO"/>
+                            <constraint firstItem="LOa-tb-LFa" firstAttribute="centerX" secondItem="b9W-ta-wxP" secondAttribute="centerX" id="pfX-jr-ndw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="juq-B7-v05"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Contacto" id="Nhr-bo-Bdp">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="menu" id="Svx-6j-Yyw"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1W3-LU-4aC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7518.8405797101459" y="531.69642857142856"/>
         </scene>
     </scenes>
     <resources>
@@ -2023,13 +2130,14 @@ Ingrese su cédula de medicina general y su contraseña para iniciar:</string>
         <image name="P8-2" width="85" height="141"/>
         <image name="P8-3" width="25" height="25"/>
         <image name="P8-4" width="29" height="24"/>
+        <image name="iconp" width="23" height="30.5"/>
         <image name="menu" width="25" height="18.5"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="fL7-g4-7Gh"/>
         <segue reference="CKG-rk-pB0"/>
         <segue reference="OhF-wX-2ND"/>
-        <segue reference="bE8-ar-Y0D"/>
+        <segue reference="VkV-6E-AJW"/>
         <segue reference="eXy-eh-bRT"/>
     </inferredMetricsTieBreakers>
 </document>

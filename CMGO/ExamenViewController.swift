@@ -43,21 +43,33 @@ class ExamenViewController: UIViewController {
             case .success(let value):
                 let json = JSON(value)
                 if json["status"].boolValue{
-                    for test in json["msg"].arrayValue{
-                        print(test["id"].stringValue)
-                        if test["id_sede"].stringValue == "64" {
-                            continue
+                    let json = JSON(value)
+                    print(json)
+                    if let jsonData = try? json["msg"].rawData(){
+                        if let e  = try? JSONDecoder().decode([Test].self, from: jsonData){
+                            self.testList = e.filter({ (item) -> Bool in
+                                item.id_sede != "64"
+                            })
+                            self.tableView.reloadData()
+                            
                         }
-                        let testItem = Test(id: test["id_sede"].stringValue, lat:test["latitud"].floatValue , lang: test["longitud"].floatValue, location: test["sede"].stringValue, state: test["estado"].stringValue, region: test["municipio"].stringValue, address:test["direccion"].stringValue, capacity: test["cupo"].stringValue, date: test["fecha"].stringValue,
-                            timeStart:test["hora_inicio"].stringValue,
-                            timeEnd: test["hora_fin"].stringValue)
-                        
-                        self.testList.append(testItem)
-                        
                     }
                 }
-                self.tableView.reloadData()
-                print(self.testList)
+//                    for test in json["msg"].arrayValue{
+//                        print(test["id"].stringValue)
+//                        if test["id_sede"].stringValue == "64" {
+//                            continue
+//                        }
+//                        let testItem = Test(id: test["id_sede"].stringValue, lat:test["latitud"].floatValue , lang: test["longitud"].floatValue, location: test["sede"].stringValue, state: test["estado"].stringValue, region: test["municipio"].stringValue, address:test["direccion"].stringValue, capacity: test["cupo"].stringValue, date: test["fecha"].stringValue,
+//                            timeStart:test["hora_inicio"].stringValue,
+//                            timeEnd: test["hora_fin"].stringValue)
+//
+//                        self.testList.append(testItem)
+//
+//                    }
+//                }
+//                self.tableView.reloadData()
+//                print(self.testList)
                 
             case .failure(let error):
                 print(error)
@@ -67,6 +79,9 @@ class ExamenViewController: UIViewController {
         }
     }
 
+    @IBAction func openLink(_ sender: UIButton) {
+        openUrl("https://cmgo.org.mx/requisitos-gyo.html")
+    }
     /*
     // MARK: - Navigation
 
@@ -88,7 +103,7 @@ extension ExamenViewController : UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! TestTableViewCell
         let test = testList[indexPath.row]
-        cell.titleLabel.text = test.location
+        cell.titleLabel.text = test.sede
         cell.dateLabel.text = test.formatedDate()
         cell.timeLabel.text = test.formatedTimeRange()
         return cell
