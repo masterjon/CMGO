@@ -14,7 +14,7 @@ class MenuViewController: UIViewController {
     var items = [
         ["icon":"P5-R1", "title":"Inicio", "vc":"InicioNVC"],
         ["icon":"P5-R3", "title":"Eventos con puntaje", "vc":"EventosNVC"],
-        ["icon":"P5-R4", "title":"Mi agenda", "vc":"MiAgendaNVC"],
+        ["icon":"P5-R4", "title":"Mi Agenda", "vc":"MiAgendaNVC"],
         ["icon":"P5-R5", "title":"Examen de Certificación", "vc":"ExamenNVC"],
         ["icon":"P5-R7", "title":"Vigencia de Certificación", "vc":"VigenciaNVC"],
         ["icon":"P5-R8", "title":"Médicos Certificados", "vc":"MedicosNVC"],
@@ -49,10 +49,10 @@ extension MenuViewController: UITableViewDataSource, UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         guard let vcTitle = items[indexPath.row]["vc"] else{return}
-         print(self.parent?.restorationIdentifier)
-        let nvc = self.storyboard!.instantiateViewController(withIdentifier: vcTitle)
-        present(nvc, animated: false, completion: nil)
+        let nvc = storyBoard.instantiateViewController(withIdentifier: vcTitle)
+        self.present(nvc, animated: false, completion: nil)
     }
     
     

@@ -68,7 +68,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="XqY-8U-Hyg" secondAttribute="height" multiplier="693:130" id="Ai7-5Z-vDp"/>
                                                         </constraints>
-                                                        <state key="normal" title="Button" image="P2-6"/>
+                                                        <state key="normal" title="Button" image="Boton4-OK"/>
                                                         <connections>
                                                             <segue destination="oEM-PO-zX3" kind="show" id="CKG-rk-pB0"/>
                                                         </connections>
@@ -166,11 +166,88 @@
         <!--Mi Agenda-->
         <scene sceneID="SzZ-Mi-HI9">
             <objects>
-                <viewController storyboardIdentifier="MiAgendaVC" id="mCT-rK-hKq" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MiAgendaVC" id="mCT-rK-hKq" customClass="MiAgendaViewController" customModule="CMGO" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jMQ-QP-q5F">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="v54-Qn-KAl">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="73" id="vNg-fI-QTN" customClass="TestTableViewCell" customModule="CMGO" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="55.5" width="414" height="73"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vNg-fI-QTN" id="eEe-Tn-cAk">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="72.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dI7-33-PUg">
+                                                    <rect key="frame" x="15" y="15" width="384" height="42.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YEv-12-MHb">
+                                                            <rect key="frame" x="0.0" y="0.0" width="384" height="12"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3mY-nZ-9i8">
+                                                            <rect key="frame" x="0.0" y="22" width="384" height="20.5"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aQy-Ym-pYr">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="192" height="20.5"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="exj-o2-naP">
+                                                                    <rect key="frame" x="192" y="0.0" width="192" height="20.5"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="dI7-33-PUg" secondAttribute="bottom" constant="15" id="1hj-BW-7aO"/>
+                                                <constraint firstAttribute="trailing" secondItem="dI7-33-PUg" secondAttribute="trailing" constant="15" id="DFj-pb-yna"/>
+                                                <constraint firstItem="dI7-33-PUg" firstAttribute="top" secondItem="eEe-Tn-cAk" secondAttribute="top" constant="15" id="LwS-QJ-eIx"/>
+                                                <constraint firstItem="dI7-33-PUg" firstAttribute="leading" secondItem="eEe-Tn-cAk" secondAttribute="leading" constant="15" id="g2o-kE-iWR"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dateLabel" destination="aQy-Ym-pYr" id="CMo-EL-ZK5"/>
+                                            <outlet property="timeLabel" destination="exj-o2-naP" id="1eN-2y-xQ4"/>
+                                            <outlet property="titleLabel" destination="YEv-12-MHb" id="Fr4-UF-1mh"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="mCT-rK-hKq" id="7R5-iJ-Dic"/>
+                                    <outlet property="delegate" destination="mCT-rK-hKq" id="hpO-Bx-msH"/>
+                                </connections>
+                            </tableView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E36-fd-l2S">
+                                <rect key="frame" x="20" y="448" width="374" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="E36-fd-l2S" secondAttribute="trailing" constant="20" id="8MJ-zV-L5W"/>
+                            <constraint firstItem="E36-fd-l2S" firstAttribute="centerY" secondItem="jMQ-QP-q5F" secondAttribute="centerY" id="Zhj-CH-qiA"/>
+                            <constraint firstItem="v54-Qn-KAl" firstAttribute="top" secondItem="Xbj-Ab-krh" secondAttribute="top" id="bLP-xc-6Tl"/>
+                            <constraint firstItem="v54-Qn-KAl" firstAttribute="trailing" secondItem="Xbj-Ab-krh" secondAttribute="trailing" id="dEA-A3-Es2"/>
+                            <constraint firstItem="v54-Qn-KAl" firstAttribute="leading" secondItem="Xbj-Ab-krh" secondAttribute="leading" id="di8-64-ZIr"/>
+                            <constraint firstItem="E36-fd-l2S" firstAttribute="centerX" secondItem="jMQ-QP-q5F" secondAttribute="centerX" id="hGU-03-m2N"/>
+                            <constraint firstAttribute="bottom" secondItem="v54-Qn-KAl" secondAttribute="bottom" id="uAH-IO-RBt"/>
+                            <constraint firstItem="E36-fd-l2S" firstAttribute="leading" secondItem="jMQ-QP-q5F" secondAttribute="leading" constant="20" id="xx4-gh-kxq"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Xbj-Ab-krh"/>
                     </view>
                     <navigationItem key="navigationItem" title="Mi Agenda" id="KN7-hb-4gR">
@@ -180,10 +257,14 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="errorLabel" destination="E36-fd-l2S" id="34T-jy-YZr"/>
+                        <outlet property="tableView" destination="v54-Qn-KAl" id="FCS-Bd-hPM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uxt-rV-feo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1148" y="510"/>
+            <point key="canvasLocation" x="-1149.2753623188407" y="509.59821428571428"/>
         </scene>
         <!--Side Menu Navigation Controller-->
         <scene sceneID="SHj-Is-PtV">
@@ -215,7 +296,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Menu-1" translatesAutoresizingMaskIntoConstraints="NO" id="1vo-cm-wPU">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Menu-1" translatesAutoresizingMaskIntoConstraints="NO" id="1vo-cm-wPU">
                                 <rect key="frame" x="0.0" y="88" width="414" height="160.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="1vo-cm-wPU" secondAttribute="height" multiplier="31:12" id="C3V-ox-kBE"/>
@@ -328,7 +409,7 @@
                                                         </constraints>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                                        <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
                                                         <connections>
                                                             <outlet property="delegate" destination="Fx5-NS-YDj" id="kUr-Mq-EdC"/>
                                                         </connections>
@@ -720,7 +801,7 @@ Ingrese su cédula de medicina general y su contraseña para iniciar:</string>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Q7e-v0-ehJ">
                                                     <rect key="frame" x="15" y="15" width="384" height="42.5"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KBW-Qt-8tx">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KBW-Qt-8tx">
                                                             <rect key="frame" x="0.0" y="0.0" width="384" height="12"/>
                                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                             <nil key="textColor"/>
@@ -814,7 +895,7 @@ Ingrese su cédula de medicina general y su contraseña para iniciar:</string>
         <!--Examen Detalle View Controller-->
         <scene sceneID="AE1-VZ-07e">
             <objects>
-                <viewController id="ssd-Py-LdX" customClass="ExamenDetalleViewController" customModule="CMGO" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ExamenDetalleVC" id="ssd-Py-LdX" customClass="ExamenDetalleViewController" customModule="CMGO" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4tP-N5-duQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -823,7 +904,7 @@ Ingrese su cédula de medicina general y su contraseña para iniciar:</string>
                                 <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vbf-t9-lJd">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="549.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="595.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3SS-yQ-fcS">
                                                 <rect key="frame" x="20" y="35" width="374" height="24"/>
@@ -838,8 +919,8 @@ Ingrese su cédula de medicina general y su contraseña para iniciar:</string>
                                                     <constraint firstAttribute="height" constant="2" id="khR-u6-Xa7"/>
                                                 </constraints>
                                             </view>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="KDr-Ml-btq">
-                                                <rect key="frame" x="20" y="109" width="374" height="304"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="KDr-Ml-btq">
+                                                <rect key="frame" x="20" y="109" width="374" height="350"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fecha" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LN6-iw-1nC">
                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
@@ -848,64 +929,83 @@ Ingrese su cédula de medicina general y su contraseña para iniciar:</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ys9-HI-qAc">
-                                                        <rect key="frame" x="0.0" y="28.5" width="374" height="20.5"/>
+                                                        <rect key="frame" x="0.0" y="25.5" width="374" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hkA-HH-7KQ">
-                                                        <rect key="frame" x="0.0" y="57" width="374" height="20"/>
+                                                        <rect key="frame" x="0.0" y="51" width="374" height="20"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="20" id="F60-Wb-wRl"/>
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Horario" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="auw-1u-SNA">
-                                                        <rect key="frame" x="0.0" y="85" width="374" height="20.5"/>
+                                                        <rect key="frame" x="0.0" y="76" width="374" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xim-9w-8Je">
-                                                        <rect key="frame" x="0.0" y="113.5" width="374" height="20.5"/>
+                                                        <rect key="frame" x="0.0" y="101.5" width="374" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m9k-8u-dtZ">
-                                                        <rect key="frame" x="0.0" y="142" width="374" height="20"/>
+                                                        <rect key="frame" x="0.0" y="127" width="374" height="20"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="20" id="e5e-tr-EWi"/>
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recinto" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ido-HJ-fd9">
-                                                        <rect key="frame" x="0.0" y="170" width="374" height="20.5"/>
+                                                        <rect key="frame" x="0.0" y="152" width="374" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KZq-Rr-AIL">
-                                                        <rect key="frame" x="0.0" y="198.5" width="374" height="20.5"/>
+                                                        <rect key="frame" x="0.0" y="177.5" width="374" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yuD-Cg-qao">
-                                                        <rect key="frame" x="0.0" y="227" width="374" height="20"/>
+                                                        <rect key="frame" x="0.0" y="203" width="374" height="20"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="20" id="RuO-Pm-Tbu"/>
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dirección" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dNZ-o6-BW9">
-                                                        <rect key="frame" x="0.0" y="255" width="374" height="20.5"/>
+                                                        <rect key="frame" x="0.0" y="228" width="374" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YvE-zF-MWa">
-                                                        <rect key="frame" x="0.0" y="283.5" width="374" height="20.5"/>
+                                                        <rect key="frame" x="0.0" y="253.5" width="374" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pDk-Dc-GD0">
+                                                        <rect key="frame" x="0.0" y="279" width="374" height="20"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="20" id="LtL-zr-iN2"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cupo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tPv-nO-YrP">
+                                                        <rect key="frame" x="0.0" y="304" width="374" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d0r-et-Z8b">
+                                                        <rect key="frame" x="0.0" y="329.5" width="374" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -913,12 +1013,12 @@ Ingrese su cédula de medicina general y su contraseña para iniciar:</string>
                                                 </subviews>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="qcC-1D-lVm">
-                                                <rect key="frame" x="132" y="463" width="150" height="56.5"/>
+                                                <rect key="frame" x="132" y="509" width="150" height="56.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="150" id="LPq-xK-3iH"/>
                                                     <constraint firstAttribute="width" secondItem="qcC-1D-lVm" secondAttribute="height" multiplier="8:3" id="sSY-9u-aiR"/>
                                                 </constraints>
-                                                <state key="normal" title=" Agregar a mis eventos" image="iconp">
+                                                <state key="normal" title="Agregar a Mi Agenda" image="iconp">
                                                     <color key="titleColor" red="0.0039215686269999999" green="0.56470588239999997" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                 </state>
                                                 <connections>
@@ -962,6 +1062,8 @@ Ingrese su cédula de medicina general y su contraseña para iniciar:</string>
                         <viewLayoutGuide key="safeArea" id="VPT-jH-lmR"/>
                     </view>
                     <connections>
+                        <outlet property="agendaBtn" destination="qcC-1D-lVm" id="vCh-2l-Z0b"/>
+                        <outlet property="cupoLabel" destination="d0r-et-Z8b" id="toP-ID-h9f"/>
                         <outlet property="dateLabel" destination="Ys9-HI-qAc" id="zG6-nt-Kth"/>
                         <outlet property="direccionLabel" destination="YvE-zF-MWa" id="Nj5-RF-ev6"/>
                         <outlet property="recintoLabel" destination="KZq-Rr-AIL" id="KKt-H2-XTP"/>
@@ -1105,7 +1207,7 @@ Ingrese su cédula de medicina general y su contraseña para iniciar:</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rnS-Zz-W5H">
-                                <rect key="frame" x="0.0" y="95" width="414" height="37"/>
+                                <rect key="frame" x="0.0" y="54" width="414" height="37"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Puntos" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dBM-2n-civ">
                                         <rect key="frame" x="324" y="8" width="70" height="21"/>
@@ -1125,28 +1227,28 @@ Ingrese su cédula de medicina general y su contraseña para iniciar:</string>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¿Constancia con código QR?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rdT-WR-mDE">
-                                <rect key="frame" x="97" y="740" width="220" height="21"/>
+                                <rect key="frame" x="97" y="785" width="220" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lAH-g2-WRX">
-                                <rect key="frame" x="0.0" y="140" width="414" height="540"/>
+                                <rect key="frame" x="0.0" y="99" width="414" height="677"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="RmL-pw-P1O">
                                     <rect key="frame" x="0.0" y="122" width="414" height="44"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NhD-7m-WCH">
-                                            <rect key="frame" x="278" y="11.5" width="38" height="21"/>
+                                            <rect key="frame" x="308" y="11.5" width="38" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ic-ck-Gz1">
-                                            <rect key="frame" x="324" y="8" width="70" height="28"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="1ic-ck-Gz1">
+                                            <rect key="frame" x="354" y="8" width="40" height="28"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="70" id="Xbk-Ig-yIo"/>
+                                                <constraint firstAttribute="width" constant="40" id="Xbk-Ig-yIo"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                             <nil key="textColor"/>
@@ -1192,15 +1294,15 @@ Ingrese su cédula de medicina general y su contraseña para iniciar:</string>
                                                             </constraints>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U2G-E7-pom">
-                                                            <rect key="frame" x="63" y="16" width="250" height="50"/>
-                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                            <rect key="frame" x="63" y="16" width="279" height="50"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                                             <color key="textColor" red="0.0" green="0.4039215686" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mIk-Pl-h8C">
-                                                            <rect key="frame" x="325" y="30.5" width="69" height="21"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="mIk-Pl-h8C">
+                                                            <rect key="frame" x="354" y="30.5" width="40" height="21"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="69" id="dDY-i6-wtE"/>
+                                                                <constraint firstAttribute="width" constant="40" id="dDY-i6-wtE"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                             <nil key="textColor"/>
@@ -1240,7 +1342,7 @@ Ingrese su cédula de medicina general y su contraseña para iniciar:</string>
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Xg-d4-9qU">
-                                <rect key="frame" x="149.5" y="769" width="115" height="33"/>
+                                <rect key="frame" x="149.5" y="814" width="115" height="33"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                 <state key="normal" title="Captúrelo aquí">
                                     <color key="titleColor" red="0.0039215686269999999" green="0.56470588239999997" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
@@ -1249,31 +1351,48 @@ Ingrese su cédula de medicina general y su contraseña para iniciar:</string>
                                     <action selector="showQRTab:" destination="XQO-NM-kCy" eventType="touchUpInside" id="fGk-U9-UVR"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="fFn-Iq-u3Y">
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                                <color key="color" red="0.4039215686" green="0.63921568630000003" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p14-Uh-Gin">
+                                <rect key="frame" x="30" y="776" width="354" height="1"/>
+                                <color key="backgroundColor" red="0.0" green="0.4039215686" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="XvW-hA-MkO"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="p14-Uh-Gin" firstAttribute="top" secondItem="lAH-g2-WRX" secondAttribute="bottom" id="FXv-Aq-DIU"/>
+                            <constraint firstItem="p14-Uh-Gin" firstAttribute="leading" secondItem="YtF-Gw-XXu" secondAttribute="leading" constant="30" id="J2p-q2-MHK"/>
+                            <constraint firstItem="fFn-Iq-u3Y" firstAttribute="centerY" secondItem="HuN-b2-mlb" secondAttribute="centerY" id="Jhm-Zu-PaV"/>
                             <constraint firstItem="lAH-g2-WRX" firstAttribute="leading" secondItem="YtF-Gw-XXu" secondAttribute="leading" id="LLu-uU-YTp"/>
                             <constraint firstItem="rnS-Zz-W5H" firstAttribute="leading" secondItem="YtF-Gw-XXu" secondAttribute="leading" id="QAb-5c-Q5R"/>
-                            <constraint firstItem="rnS-Zz-W5H" firstAttribute="top" secondItem="YtF-Gw-XXu" secondAttribute="top" constant="51" id="SZE-Mp-mTq"/>
-                            <constraint firstItem="rdT-WR-mDE" firstAttribute="top" secondItem="lAH-g2-WRX" secondAttribute="bottom" constant="60" id="SkE-c5-PAe"/>
+                            <constraint firstItem="rnS-Zz-W5H" firstAttribute="top" secondItem="YtF-Gw-XXu" secondAttribute="top" constant="10" id="SZE-Mp-mTq"/>
+                            <constraint firstItem="fFn-Iq-u3Y" firstAttribute="centerX" secondItem="HuN-b2-mlb" secondAttribute="centerX" id="UPS-4T-TcB"/>
                             <constraint firstItem="4Xg-d4-9qU" firstAttribute="top" secondItem="rdT-WR-mDE" secondAttribute="bottom" constant="8" id="Zv0-mP-gdK"/>
                             <constraint firstItem="rnS-Zz-W5H" firstAttribute="trailing" secondItem="YtF-Gw-XXu" secondAttribute="trailing" id="clX-LU-UFs"/>
                             <constraint firstItem="lAH-g2-WRX" firstAttribute="trailing" secondItem="YtF-Gw-XXu" secondAttribute="trailing" id="kBc-j6-OX9"/>
+                            <constraint firstItem="rdT-WR-mDE" firstAttribute="top" secondItem="p14-Uh-Gin" secondAttribute="bottom" constant="8" id="nwb-lj-oQO"/>
                             <constraint firstItem="lAH-g2-WRX" firstAttribute="top" secondItem="rnS-Zz-W5H" secondAttribute="bottom" constant="8" id="sHG-ae-WcX"/>
                             <constraint firstItem="rdT-WR-mDE" firstAttribute="centerX" secondItem="HuN-b2-mlb" secondAttribute="centerX" id="sYI-q4-5pF"/>
-                            <constraint firstItem="YtF-Gw-XXu" firstAttribute="bottom" secondItem="4Xg-d4-9qU" secondAttribute="bottom" constant="60" id="vHE-yC-Cs4"/>
+                            <constraint firstItem="p14-Uh-Gin" firstAttribute="trailing" secondItem="YtF-Gw-XXu" secondAttribute="trailing" constant="-30" id="uzs-fu-cPh"/>
+                            <constraint firstItem="YtF-Gw-XXu" firstAttribute="bottom" secondItem="4Xg-d4-9qU" secondAttribute="bottom" constant="15" id="vHE-yC-Cs4"/>
                             <constraint firstItem="4Xg-d4-9qU" firstAttribute="centerX" secondItem="HuN-b2-mlb" secondAttribute="centerX" id="wQ8-Hv-Hfy"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="YtF-Gw-XXu"/>
                     </view>
                     <connections>
+                        <outlet property="loadingIndicator" destination="fFn-Iq-u3Y" id="JNX-Cw-uH5"/>
                         <outlet property="tableView" destination="lAH-g2-WRX" id="o3b-H0-NmC"/>
                         <outlet property="totalLabel" destination="1ic-ck-Gz1" id="1c2-Eo-Xe3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fLb-1Z-qWj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1603" y="1319"/>
+            <point key="canvasLocation" x="1602.8985507246377" y="1318.5267857142856"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="pMp-lN-cED">
@@ -1287,13 +1406,13 @@ Ingrese su cédula de medicina general y su contraseña para iniciar:</string>
                                 <rect key="frame" x="20" y="64" width="374" height="116.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <string key="text">A través de esta aplicación Usted podrá escanear el código QR de sus constancias. 
-· Para utilizar esta herramienta, deberá haber iniciado su expediente de VIGENCIA DE CERTIFICACIÓN en nuestro sitio: www.cmgo.org.mx</string>
+Para utilizar esta herramienta, deberá haber iniciado su expediente de VIGENCIA DE CERTIFICACIÓN en nuestro sitio: www.cmgo.org.mx</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <dataDetectorType key="dataDetectorTypes" link="YES"/>
                             </textView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="P5-2" translatesAutoresizingMaskIntoConstraints="NO" id="bCA-xc-MWN">
-                                <rect key="frame" x="20" y="233.5" width="374" height="179.5"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="P5-2" translatesAutoresizingMaskIntoConstraints="NO" id="bCA-xc-MWN">
+                                <rect key="frame" x="0.0" y="233.5" width="414" height="198.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="bCA-xc-MWN" secondAttribute="height" multiplier="75:36" id="7tA-la-mM9"/>
                                 </constraints>
@@ -1339,11 +1458,11 @@ Ingrese su cédula de medicina general y su contraseña para iniciar:</string>
                             <constraint firstItem="4VY-3l-hzm" firstAttribute="trailing" secondItem="mPA-rM-9wE" secondAttribute="trailing" constant="20" id="Drq-uC-p1m"/>
                             <constraint firstItem="qDG-Xq-XJz" firstAttribute="leading" secondItem="4VY-3l-hzm" secondAttribute="leading" constant="20" id="J52-EM-FA5"/>
                             <constraint firstItem="bCA-xc-MWN" firstAttribute="top" secondItem="qDG-Xq-XJz" secondAttribute="bottom" constant="8" id="UYP-5S-fCj"/>
-                            <constraint firstItem="bCA-xc-MWN" firstAttribute="leading" secondItem="4VY-3l-hzm" secondAttribute="leading" constant="20" id="WNO-kn-PUH"/>
+                            <constraint firstItem="bCA-xc-MWN" firstAttribute="leading" secondItem="4VY-3l-hzm" secondAttribute="leading" id="WNO-kn-PUH"/>
                             <constraint firstItem="mPA-rM-9wE" firstAttribute="top" relation="greaterThanOrEqual" secondItem="bCA-xc-MWN" secondAttribute="bottom" constant="20" id="XEA-fJ-PxW"/>
                             <constraint firstItem="mPA-rM-9wE" firstAttribute="leading" secondItem="4VY-3l-hzm" secondAttribute="leading" constant="20" id="ZJw-xk-lAg"/>
                             <constraint firstItem="4VY-3l-hzm" firstAttribute="trailing" secondItem="jtr-Z6-25E" secondAttribute="trailing" constant="20" id="c4M-R7-Aqg"/>
-                            <constraint firstItem="4VY-3l-hzm" firstAttribute="trailing" secondItem="bCA-xc-MWN" secondAttribute="trailing" constant="20" id="orj-Q3-sSO"/>
+                            <constraint firstItem="4VY-3l-hzm" firstAttribute="trailing" secondItem="bCA-xc-MWN" secondAttribute="trailing" id="orj-Q3-sSO"/>
                             <constraint firstItem="qDG-Xq-XJz" firstAttribute="top" secondItem="jtr-Z6-25E" secondAttribute="bottom" constant="15" id="pJJ-kV-Vjg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4VY-3l-hzm"/>
@@ -1795,7 +1914,7 @@ Ingrese su cédula de medicina general y su contraseña para iniciar:</string>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="6EZ-H2-7g0">
                                                     <rect key="frame" x="15" y="15" width="384" height="42.5"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PLK-Gr-PKE">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PLK-Gr-PKE">
                                                             <rect key="frame" x="0.0" y="0.0" width="384" height="12"/>
                                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                             <nil key="textColor"/>
@@ -1864,7 +1983,7 @@ Ingrese su cédula de medicina general y su contraseña para iniciar:</string>
         <!--Evento Detalle View Controller-->
         <scene sceneID="y5F-0x-VH0">
             <objects>
-                <viewController id="KQK-4b-c3a" customClass="EventoDetalleViewController" customModule="CMGO" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EventoDetalleVC" id="KQK-4b-c3a" customClass="EventoDetalleViewController" customModule="CMGO" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YG6-tH-oup">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1873,7 +1992,7 @@ Ingrese su cédula de medicina general y su contraseña para iniciar:</string>
                                 <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nH2-Ct-ndz">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="605.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="777.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z5G-hk-Y0W">
                                                 <rect key="frame" x="20" y="35" width="374" height="24"/>
@@ -1889,7 +2008,7 @@ Ingrese su cédula de medicina general y su contraseña para iniciar:</string>
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="YRy-JU-Xel">
-                                                <rect key="frame" x="20" y="109" width="374" height="476.5"/>
+                                                <rect key="frame" x="20" y="109" width="374" height="532"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fechas:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZQO-0p-Upd">
                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
@@ -2012,8 +2131,46 @@ Ingrese su cédula de medicina general y su contraseña para iniciar:</string>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pbh-NE-1uK">
+                                                        <rect key="frame" x="0.0" y="481.5" width="374" height="20"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="20" id="UIR-Tq-9Mi"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temas:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hpF-ZG-Tqw">
+                                                        <rect key="frame" x="0.0" y="506.5" width="374" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="VM9-Rd-cMx">
+                                                        <rect key="frame" x="0.0" y="532" width="374" height="0.0"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v2i-we-CXq">
+                                                                <rect key="frame" x="0.0" y="0.0" width="374" height="0.0"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
                                                 </subviews>
                                             </stackView>
+                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="daU-Ke-Nzk">
+                                                <rect key="frame" x="132" y="691" width="150" height="56.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="150" id="4gH-kp-bjn"/>
+                                                    <constraint firstAttribute="width" secondItem="daU-Ke-Nzk" secondAttribute="height" multiplier="8:3" id="lJI-yA-h2E"/>
+                                                </constraints>
+                                                <state key="normal" title="Agregar a Mi Agenda" image="iconp">
+                                                    <color key="titleColor" red="0.0039215686269999999" green="0.56470588239999997" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="addEvent:" destination="ssd-Py-LdX" eventType="touchUpInside" id="aOI-tl-D4F"/>
+                                                    <action selector="addEvent:" destination="KQK-4b-c3a" eventType="touchUpInside" id="x0V-RM-rzv"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -2023,10 +2180,12 @@ Ingrese su cédula de medicina general y su contraseña para iniciar:</string>
                                             <constraint firstItem="YRy-JU-Xel" firstAttribute="top" secondItem="N9S-4P-Nyx" secondAttribute="bottom" constant="40" id="SMg-Qi-rl6"/>
                                             <constraint firstAttribute="trailing" secondItem="z5G-hk-Y0W" secondAttribute="trailing" constant="20" id="Suw-cI-ZSW"/>
                                             <constraint firstAttribute="trailing" secondItem="N9S-4P-Nyx" secondAttribute="trailing" constant="20" id="TIy-Ro-QK7"/>
+                                            <constraint firstAttribute="bottom" secondItem="daU-Ke-Nzk" secondAttribute="bottom" constant="30" id="VMa-MY-A5h"/>
                                             <constraint firstItem="YRy-JU-Xel" firstAttribute="leading" secondItem="nH2-Ct-ndz" secondAttribute="leading" constant="20" id="bAk-67-NB3"/>
                                             <constraint firstAttribute="trailing" secondItem="YRy-JU-Xel" secondAttribute="trailing" constant="20" id="d6e-TX-42e"/>
+                                            <constraint firstItem="daU-Ke-Nzk" firstAttribute="top" secondItem="YRy-JU-Xel" secondAttribute="bottom" constant="50" id="f1S-eX-bbO"/>
                                             <constraint firstItem="z5G-hk-Y0W" firstAttribute="leading" secondItem="nH2-Ct-ndz" secondAttribute="leading" constant="20" id="mTG-nR-az3"/>
-                                            <constraint firstAttribute="bottom" secondItem="YRy-JU-Xel" secondAttribute="bottom" constant="20" id="tT4-Nf-MoH"/>
+                                            <constraint firstItem="daU-Ke-Nzk" firstAttribute="centerX" secondItem="nH2-Ct-ndz" secondAttribute="centerX" id="t6W-5W-gUa"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -2049,6 +2208,7 @@ Ingrese su cédula de medicina general y su contraseña para iniciar:</string>
                         <viewLayoutGuide key="safeArea" id="7ZN-Wu-MVW"/>
                     </view>
                     <connections>
+                        <outlet property="agendaBtn" destination="daU-Ke-Nzk" id="MEB-v4-gX3"/>
                         <outlet property="direccionLabel" destination="lTM-YF-a85" id="u0Z-je-kx8"/>
                         <outlet property="fechaLabel" destination="Qm8-Ln-PHb" id="i8W-IR-BmG"/>
                         <outlet property="institucionLabel" destination="6op-Hy-8UH" id="PLs-8N-grE"/>
@@ -2056,12 +2216,13 @@ Ingrese su cédula de medicina general y su contraseña para iniciar:</string>
                         <outlet property="responsableLabel" destination="Uu2-Iz-aSe" id="kCX-S0-DZG"/>
                         <outlet property="sedeLabel" destination="5C1-s2-Lq9" id="Krc-1U-kim"/>
                         <outlet property="telBtn" destination="b8J-qp-6mO" id="xOD-x7-gIJ"/>
+                        <outlet property="temasStackView" destination="VM9-Rd-cMx" id="cbu-PO-zks"/>
                         <outlet property="titleLabel" destination="z5G-hk-Y0W" id="Uzr-QL-0yC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AwK-6m-5O0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2059" y="2177"/>
+            <point key="canvasLocation" x="-2059.4202898550725" y="2176.3392857142858"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="LLV-Gy-jHZ">
@@ -2118,26 +2279,26 @@ Ingrese su cédula de medicina general y su contraseña para iniciar:</string>
     <resources>
         <image name="Boton-Código" width="285" height="213"/>
         <image name="Boton-Escanee" width="285" height="213"/>
+        <image name="Boton4-OK" width="693" height="130"/>
         <image name="Menu-1" width="619" height="235"/>
         <image name="P1" width="750" height="1334"/>
         <image name="P2-1" width="589" height="134"/>
         <image name="P2-3" width="693" height="130"/>
         <image name="P2-4" width="693" height="130"/>
         <image name="P2-5" width="693" height="130"/>
-        <image name="P2-6" width="693" height="130"/>
         <image name="P4-2" width="745" height="204"/>
         <image name="P5-2" width="750" height="369"/>
         <image name="P8-2" width="85" height="141"/>
         <image name="P8-3" width="25" height="25"/>
         <image name="P8-4" width="29" height="24"/>
-        <image name="iconp" width="23" height="30.5"/>
+        <image name="iconp" width="35" height="30.5"/>
         <image name="menu" width="25" height="18.5"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="fL7-g4-7Gh"/>
         <segue reference="CKG-rk-pB0"/>
         <segue reference="OhF-wX-2ND"/>
-        <segue reference="VkV-6E-AJW"/>
+        <segue reference="nvx-7d-QgN"/>
         <segue reference="eXy-eh-bRT"/>
     </inferredMetricsTieBreakers>
 </document>

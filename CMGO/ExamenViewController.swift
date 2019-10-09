@@ -44,7 +44,6 @@ class ExamenViewController: UIViewController {
                 let json = JSON(value)
                 if json["status"].boolValue{
                     let json = JSON(value)
-                    print(json)
                     if let jsonData = try? json["msg"].rawData(){
                         if let e  = try? JSONDecoder().decode([Test].self, from: jsonData){
                             self.testList = e.filter({ (item) -> Bool in

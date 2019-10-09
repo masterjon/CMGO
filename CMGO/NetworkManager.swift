@@ -45,6 +45,25 @@ struct NetworkManager {
         }
     }
     
+    func getEvent(id:String, completion:@escaping(Evento?)->()){
+        let params : [String:String] = [
+            "id_evento": id
+        ]
+        Alamofire.request("https://cmgo.org.mx/core/index.php/solicitud_puntaje/eventos_service/resumen",method: .get, parameters: params, headers:getHttpHeaders()).validate().responseJSON { response in
+            switch response.result{
+            case .success(let value):
+                let json = JSON(value)
+                print(json)
+                if let jsonData = try? json["msg"].rawData(){
+                    if let e  = try? JSONDecoder().decode(Evento.self, from: jsonData){
+                        completion(e)
+                    }
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
     func getImage(url:String, completion:@escaping(UIImage?)->()){
         Alamofire.request(url).responseData { (response) in
             if let data = response.data

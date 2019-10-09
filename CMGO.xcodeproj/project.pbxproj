@@ -38,6 +38,8 @@
 		FC73A388231EAA3C0003751B /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC73A387231EAA3C0003751B /* Test.swift */; };
 		FC73A38A231EAB760003751B /* TestDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC73A389231EAB760003751B /* TestDate.swift */; };
 		FC73A38D231EB4980003751B /* TestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC73A38C231EB4980003751B /* TestTableViewCell.swift */; };
+		FC8BBD53234D8FA900EE8BE1 /* MiAgendaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8BBD52234D8FA900EE8BE1 /* MiAgendaViewController.swift */; };
+		FC8BBD55234DC18700EE8BE1 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8BBD54234DC18700EE8BE1 /* Notifications.swift */; };
 		FCA0AEAA231604FE003BC16F /* Slide.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA0AEA9231604FE003BC16F /* Slide.swift */; };
 		FCA0AEAD23160C61003BC16F /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA0AEAC23160C61003BC16F /* Utils.swift */; };
 		FCA0AEAF23161410003BC16F /* EventosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA0AEAE23161410003BC16F /* EventosViewController.swift */; };
@@ -87,6 +89,8 @@
 		FC73A387231EAA3C0003751B /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		FC73A389231EAB760003751B /* TestDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDate.swift; sourceTree = "<group>"; };
 		FC73A38C231EB4980003751B /* TestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTableViewCell.swift; sourceTree = "<group>"; };
+		FC8BBD52234D8FA900EE8BE1 /* MiAgendaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiAgendaViewController.swift; sourceTree = "<group>"; };
+		FC8BBD54234DC18700EE8BE1 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		FCA0AEA9231604FE003BC16F /* Slide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slide.swift; sourceTree = "<group>"; };
 		FCA0AEAC23160C61003BC16F /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		FCA0AEAE23161410003BC16F /* EventosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventosViewController.swift; sourceTree = "<group>"; };
@@ -206,6 +210,7 @@
 				FCA0AEAC23160C61003BC16F /* Utils.swift */,
 				FC0DA238234038ED0076549D /* ColorPalette.swift */,
 				FCFC02AE23417F710005BACC /* NetworkManager.swift */,
+				FC8BBD54234DC18700EE8BE1 /* Notifications.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -222,6 +227,7 @@
 				FC4D11D7231A15B300AD08E2 /* ContactoViewController.swift */,
 				FC7316FB2320B9AD00DF5F48 /* MedicosCertificadosViewController.swift */,
 				FC7316FD23214CCF00DF5F48 /* CedulaViewController.swift */,
+				FC8BBD52234D8FA900EE8BE1 /* MiAgendaViewController.swift */,
 				FC4BED1723442B08000A7A88 /* Examen */,
 				FCFC02B423419BC40005BACC /* Vigencia */,
 				FCFC02B523419BD40005BACC /* Noticias */,
@@ -385,6 +391,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC8BBD55234DC18700EE8BE1 /* Notifications.swift in Sources */,
 				FC63A5952318E9B5002B201E /* LoginViewController.swift in Sources */,
 				FC3E4B3D23424512005B6860 /* MenuViewController.swift in Sources */,
 				FC4D11D8231A15B300AD08E2 /* ContactoViewController.swift in Sources */,
@@ -406,6 +413,7 @@
 				FC73A388231EAA3C0003751B /* Test.swift in Sources */,
 				FC4BED1F23447191000A7A88 /* Tema.swift in Sources */,
 				FC73A38D231EB4980003751B /* TestTableViewCell.swift in Sources */,
+				FC8BBD53234D8FA900EE8BE1 /* MiAgendaViewController.swift in Sources */,
 				FC4BED162344285B000A7A88 /* ExamenTabViewController.swift in Sources */,
 				FC34BD0B230BA67400C5B7E2 /* AppDelegate.swift in Sources */,
 				FCFC02B223419B950005BACC /* NoticiasViewController.swift in Sources */,

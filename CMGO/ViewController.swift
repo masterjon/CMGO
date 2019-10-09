@@ -19,11 +19,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "P3-1"),for: .default)
-        deleteUserToken()
+        //deleteUserToken()
         //getSlides()
-        
-        
-
+//        let t = getMyTests()
+//        print(t)
+//        getPendingNotif()
+//
         // Do any additional setup after loading the view.
     }
     @objc func didTap() {

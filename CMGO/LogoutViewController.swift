@@ -7,16 +7,13 @@
 //
 
 import UIKit
-import KeychainAccess
 
 class LogoutViewController: UIViewController {
     let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-    let keychain = Keychain()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
-        keychain["token"] = nil
+        deleteUserToken()
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) { // Change `2.0` to the desired
             
             let home = self.storyBoard.instantiateViewController(withIdentifier: "InicioNVC")

@@ -12,6 +12,7 @@ import SwiftyJSON
 
 class CedulaViewController: UIViewController {
 
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     var itemList = [CedulaItem]()
@@ -19,17 +20,25 @@ class CedulaViewController: UIViewController {
     var delegate:TabDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
-        getScore()
+       
         // Do any additional setup after loading the view.
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+         getScore()
     }
     
     func getScore(){
         guard let token = getUserToken() else{ return}
-        
+        loadingIndicator.startAnimating()
+        itemList.removeAll()
+        total = 0
         let postData : [String:String] = [
             "cmgo_user_token": token,
         ]
         Alamofire.request("https://cmgo.org.mx/core/index.php/api/v1/Services/cedula", method: .post, parameters: postData, headers:getHttpHeaders()).validate().responseJSON { (response) in
+            self.loadingIndicator.stopAnimating()
+
             switch response.result{
             case .success(let value):
                 let json = JSON(value)

@@ -37,5 +37,13 @@ struct Evento:Codable{
         }
         return ""
     }
+    func formatedYear()->String{
+        let apiFormatter = apiDateFormatter()
+        let defaultFormatter = yearDateFormatter()
+        if let date = apiFormatter.date(from: self.f_fin){
+            return defaultFormatter.string(from: date)
+        }
+        return ""
+    }
 }
 

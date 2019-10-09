@@ -12,12 +12,15 @@ class ExamenDetalleViewController: UIViewController {
 
     var test:Test!
     var date:TestDate!
+    var showAgenda = true
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var recintoLabel: UILabel!
     @IBOutlet weak var direccionLabel: UILabel!
+    @IBOutlet weak var cupoLabel: UILabel!
     
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var agendaBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,20 +29,13 @@ class ExamenDetalleViewController: UIViewController {
         timeLabel.text = test.formatedTimeRange()
         recintoLabel.text = test.sede
         direccionLabel.text = test.direccion
+        cupoLabel.text = test.cupo
+        agendaBtn.isHidden = !showAgenda
     }
-    
 
     @IBAction func addEvent(_ sender: UIButton) {
-        
+        let (_,msg) = addMyTests(item: test)
+        present(alertDefault(title: msg),animated: true)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

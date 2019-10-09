@@ -10,6 +10,7 @@ import UIKit
 
 class EventoDetalleViewController: UIViewController {
 
+    @IBOutlet weak var agendaBtn: UIButton!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var responsableLabel: UILabel!
     @IBOutlet weak var institucionLabel: UILabel!
@@ -18,8 +19,11 @@ class EventoDetalleViewController: UIViewController {
     @IBOutlet weak var fechaLabel: UILabel!
     @IBOutlet weak var mailBtn: UIButton!
     @IBOutlet weak var telBtn: UIButton!
-    
+    @IBOutlet weak var temasStackView: UIStackView!
+    let networkManager = NetworkManager()
     var evento : Evento!
+    var temas = [Tema]()
+    var showAgenda = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,8 +34,31 @@ class EventoDetalleViewController: UIViewController {
         telBtn.setTitle(evento.telefono, for: .normal)
         sedeLabel.text = "\(evento.estado), \(evento.municipio)"
         direccionLabel.text = evento.direccion
-        fechaLabel.text = "\(evento.formatedDateStart()) - \(evento.formatedDateEnd())"
+        fechaLabel.text = "\(evento.formatedDateStart()) - \(evento.formatedDateEnd()) \(evento.formatedYear())"
         // Do any additional setup after loading the view.
+        agendaBtn.isHidden = !showAgenda
+        if let t = evento?.temas{
+            temas = t
+            populateTemas()
+        }
+        else{
+            networkManager.getEvent(id: evento!.id_evento) { (eventR) in
+                if let t = eventR?.temas{
+                    self.temas = t
+                    self.populateTemas()
+                }
+            }
+        }
+    }
+    
+    func populateTemas(){
+        
+        for tema in temas{
+            let label = UILabel(frame: .zero)
+            label.numberOfLines = 0
+            label.text = "• \(tema.tema)"
+            temasStackView.addArrangedSubview(label)
+        }
     }
     
  
@@ -43,14 +70,10 @@ class EventoDetalleViewController: UIViewController {
         openUrl("tel:\(sender.title(for: .normal) ?? "")")
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func addEvent(_ sender: UIButton) {
+        let (_,msg) = addMyEvent(item: evento)
+        present(alertDefault(title: msg),animated: true)
     }
-    */
+    
 
 }

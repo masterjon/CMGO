@@ -8,6 +8,7 @@
 
 import UIKit
 import GoogleMaps
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,7 +19,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         GMSServices.provideAPIKey("AIzaSyAqkQXc_1ZMiJejBgt04zd8gYZ4q84FgiU")
         // Override point for customization after application launch.
-        
+        let center = UNUserNotificationCenter.current()
+        center.delegate = self
+        center.requestAuthorization(options:[.alert, .sound]) { (granted, error) in
+            if !granted {
+                print("Notification permission not granted!")
+            }
+        }
         return true
     }
 
@@ -47,3 +54,45 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+extension AppDelegate: UNUserNotificationCenterDelegate {
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                willPresent notification: UNNotification,
+                                withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        // Play sound and show alert to the user
+        completionHandler([.alert,.sound])
+    }
+    
+    
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                didReceive response: UNNotificationResponse,
+                                withCompletionHandler completionHandler: @escaping () -> Void) {
+        
+        // Determine the user action
+        print(response)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        switch response.actionIdentifier {
+        case UNNotificationDismissActionIdentifier:
+            print("Dismiss Action")
+        case UNNotificationDefaultActionIdentifier:
+            print("Default")
+            let identifier = response.notification.request.identifier
+            let userInfo = response.notification.request.content.userInfo
+            print(response.notification.request.identifier)
+            if let controller = storyboard.instantiateViewController(withIdentifier: "MiAgendaNVC") as? UINavigationController {
+                if let currentController = self.window?.rootViewController {
+                    currentController.present(controller, animated: true, completion: nil)
+                }
+            }
+            
+        case "Snooze":
+            print("Snooze")
+        case "Delete":
+            print("Delete")
+        default:
+            print("Unknown action")
+        }
+        completionHandler()
+    }
+}

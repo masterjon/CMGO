@@ -26,8 +26,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         recognizer.cancelsTouchesInView = false
         self.view.addGestureRecognizer(recognizer)
         
-        usernameTextField.text = "11223344"
-        passwordTextField.text = "123456"
+//        usernameTextField.text = "0000000010"
+//        passwordTextField.text = "123456"
         // Do any additional setup after loading the view.
     }
     
@@ -69,7 +69,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 if json["status"].boolValue{
                     if let token = json["msg"]["cmgo_user_token"].string{
                         print(token)
-                        self.keychain["token"] = token
+                        self.keychain[KEY.Keychain.userToken] = token
                         self.dismiss(animated: true, completion: {
                             self.delegate?.changeTab(index: 1)
                             print("dismiss")
