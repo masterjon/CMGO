@@ -13,6 +13,7 @@ import KeychainAccess
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
 
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -25,7 +26,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         let recognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         recognizer.cancelsTouchesInView = false
         self.view.addGestureRecognizer(recognizer)
-        
+         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self,selector: #selector(keyboardWillShow),name: UIResponder.keyboardWillShowNotification,object: nil)
 //        usernameTextField.text = "0000000010"
 //        passwordTextField.text = "123456"
         // Do any additional setup after loading the view.
@@ -48,7 +50,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             loginRequest(cedula: cedula, passwod: password)
         }
         else{
-            present(alertDefault(title: "Debes ingresar tu cedula y contraseña"),animated: true)
+            present(alertDefault(title: "Debes ingresar tu cédula y contraseña"),animated: true)
             
         }
     }
@@ -99,6 +101,26 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         self.dismiss(animated: true, completion: {
             self.delegate?.changeTab(index: 0)
         })
+    }
+    
+    @objc func keyboardWillHide(notification: Notification) {
+        
+        
+        let contentInset:UIEdgeInsets = UIEdgeInsets.zero
+        scrollView.contentInset = contentInset
+        
+        
+    }
+    
+    @objc func keyboardWillShow(_ notification: Notification) {
+        var userInfo = notification.userInfo!
+        var keyboardFrame:CGRect = (userInfo[UIResponder.keyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
+        keyboardFrame = self.view.convert(keyboardFrame, from: nil)
+        
+        var contentInset:UIEdgeInsets = self.scrollView.contentInset
+        contentInset.bottom = keyboardFrame.size.height + 20
+        scrollView.contentInset = contentInset
+        
     }
     /*
     // MARK: - Navigation

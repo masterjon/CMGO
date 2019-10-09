@@ -530,6 +530,7 @@ Ingrese su cédula de medicina general y su contraseña para iniciar:</string>
                     <connections>
                         <outlet property="loadingIndicator" destination="HbD-Br-eaq" id="9PP-da-hXa"/>
                         <outlet property="passwordTextField" destination="z7G-33-mju" id="frf-R2-91O"/>
+                        <outlet property="scrollView" destination="4Yu-F0-l2f" id="kdK-Ii-Hyb"/>
                         <outlet property="usernameTextField" destination="gLW-Ns-axJ" id="ly7-FZ-0Av"/>
                     </connections>
                 </viewController>
