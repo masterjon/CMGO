@@ -9,6 +9,7 @@
 import UIKit
 import GoogleMaps
 import UserNotifications
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         GMSServices.provideAPIKey("AIzaSyAqkQXc_1ZMiJejBgt04zd8gYZ4q84FgiU")
+        FirebaseApp.configure()
         // Override point for customization after application launch.
         let center = UNUserNotificationCenter.current()
         center.delegate = self

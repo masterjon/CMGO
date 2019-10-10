@@ -44,31 +44,18 @@ class ExamenViewController: UIViewController {
                 let json = JSON(value)
                 if json["status"].boolValue{
                     let json = JSON(value)
-                    if let jsonData = try? json["msg"].rawData(){
-                        if let e  = try? JSONDecoder().decode([Test].self, from: jsonData){
-                            self.testList = e.filter({ (item) -> Bool in
-                                item.id_sede != "64"
-                            })
-                            self.tableView.reloadData()
-                            
+                    print("json")
+                    for item in json["msg"].arrayValue{
+                        if let jsonData = try? item.rawData(){
+                            if let e  = try? JSONDecoder().decode(Test.self, from: jsonData){
+                                if e.id_sede != "64"{
+                                    self.testList.append(e)
+                                }
+                            }
                         }
                     }
+                    self.tableView.reloadData()
                 }
-//                    for test in json["msg"].arrayValue{
-//                        print(test["id"].stringValue)
-//                        if test["id_sede"].stringValue == "64" {
-//                            continue
-//                        }
-//                        let testItem = Test(id: test["id_sede"].stringValue, lat:test["latitud"].floatValue , lang: test["longitud"].floatValue, location: test["sede"].stringValue, state: test["estado"].stringValue, region: test["municipio"].stringValue, address:test["direccion"].stringValue, capacity: test["cupo"].stringValue, date: test["fecha"].stringValue,
-//                            timeStart:test["hora_inicio"].stringValue,
-//                            timeEnd: test["hora_fin"].stringValue)
-//
-//                        self.testList.append(testItem)
-//
-//                    }
-//                }
-//                self.tableView.reloadData()
-//                print(self.testList)
                 
             case .failure(let error):
                 print(error)

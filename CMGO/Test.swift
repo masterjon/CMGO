@@ -9,13 +9,13 @@
 import Foundation
 struct Test:Codable{
     let id_sede:String
-    let lat:Float?
-    let lang:Float?
+    let latitud:String?
+    let longitud:String?
     let sede:String
     let estado:String?
     let municipio:String?
-    let direccion:String
-    let cupo:String
+    let direccion:String?
+    let cupo:String?
     let fecha:String
     let hora_inicio:String
     let hora_fin:String
