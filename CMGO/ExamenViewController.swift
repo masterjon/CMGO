@@ -14,6 +14,8 @@ import SwiftyJSON
 class ExamenViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
+    
     let keychain = Keychain()
     var testList = [Test]()
     
@@ -39,6 +41,7 @@ class ExamenViewController: UIViewController {
     
     func getRemoteTests(){
         Alamofire.request("https://cmgo.org.mx/core/index.php/api/v1/Services/sedes", headers:getHttpHeaders()).validate().responseJSON { (response) in
+            self.loadingIndicator.stopAnimating()
             switch response.result{
             case .success(let value):
                 let json = JSON(value)

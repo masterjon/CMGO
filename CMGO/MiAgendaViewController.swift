@@ -22,6 +22,7 @@ class MiAgendaViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+    self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "P3-1"),for: .default)
         if let t = getMyTests(){
             myTests.append(contentsOf: t)
             if !myTests.isEmpty{
@@ -62,7 +63,7 @@ extension MiAgendaViewController: UITableViewDataSource, UITableViewDelegate{
         if let item = agenda[indexPath.section].items[indexPath.row] as? Evento{
             cell.titleLabel.text = item.nombre_evento
             cell.dateLabel.text = "\(item.formatedDateStart()) - \(item.formatedDateEnd())"
-            cell.timeLabel.text = "\(item.estado), \(item.municipio)"
+            cell.timeLabel.text = "\(item.estado), \(item.municipio ?? "")"
             
         }
         else if let item = agenda[indexPath.section].items[indexPath.row] as? Test{

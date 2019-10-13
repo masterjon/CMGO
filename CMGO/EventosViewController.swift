@@ -20,6 +20,7 @@ class EventosViewController: UIViewController {
     var stateList = [TemaParent]()
     var listType: EventListDisplay!
     
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     @IBOutlet weak var tableView: UITableView!
 
     override func viewDidLoad() {
@@ -34,6 +35,7 @@ class EventosViewController: UIViewController {
         }
         // Do any additional setup after loading the view.
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let indexPath = tableView.indexPathForSelectedRow{
             let item:Evento
@@ -51,6 +53,7 @@ class EventosViewController: UIViewController {
     
     func getEvents(byState:Bool=false){
         Alamofire.request("https://cmgo.org.mx/core/index.php/solicitud_puntaje/eventos_service/estado/", headers:getHttpHeaders()).validate().responseJSON { (response) in
+            self.loadingIndicator.stopAnimating()
             switch response.result{
             case .success(let value):
                 let json = JSON(value)
@@ -94,6 +97,7 @@ class EventosViewController: UIViewController {
         }
     }
     func getEventsByTopic(){        Alamofire.request("https://cmgo.org.mx/core/index.php/solicitud_puntaje/Temas/contenido/", headers:getHttpHeaders()).validate().responseJSON { (response) in
+        self.loadingIndicator.stopAnimating()
             switch response.result{
             case .success(let value):
                 let json = JSON(value)
@@ -116,6 +120,7 @@ class EventosViewController: UIViewController {
         }
     }
     func getEventsByDate(){        Alamofire.request("https://cmgo.org.mx/core/index.php/solicitud_puntaje/eventos_service/contenido", headers:getHttpHeaders()).validate().responseJSON { (response) in
+        self.loadingIndicator.stopAnimating()
         switch response.result{
         case .success(let value):
             let json = JSON(value)
@@ -191,7 +196,7 @@ extension EventosViewController:UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TestTableViewCell
         cell.titleLabel.text = item.nombre_evento
         cell.dateLabel.text = "\(item.formatedDateStart()) - \(item.formatedDateEnd())"
-        cell.timeLabel.text = "\(item.estado), \(item.municipio)"
+        cell.timeLabel.text = "\(item.estado), \(item.municipio ?? "")"
         return cell
     }
     

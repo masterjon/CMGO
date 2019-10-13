@@ -10,15 +10,15 @@ import Foundation
 struct Evento:Codable{
     let id_evento:String
     let nombre_evento:String
-    let correo:String
+    let correo:String?
     let estado:String
-    let municipio:String
-    let nombre_solicitante:String
+    let municipio:String?
+    let nombre_solicitante:String?
     let f_inicio:String
     let f_fin:String
-    let direccion:String
-    let telefono:String
-    let nombre_institucion:String
+    let direccion:String?
+    let telefono:String?
+    let nombre_institucion:String?
     let temas : [Tema]?
     
     func formatedDateStart()->String{

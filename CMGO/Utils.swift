@@ -207,6 +207,8 @@ func getNotificationDateTime(fecha:String,hora:String)->Date?{
     print("getDateNotif: \(dateTime)")
     let calendar = Calendar.current
     let date = calendar.date(byAdding: .day, value: -3, to: dateTime)
+    //let date = calendar.date(byAdding: .minute, value: 1, to: Date())
+    
     return date
 }
 

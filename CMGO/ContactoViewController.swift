@@ -33,7 +33,13 @@ class ContactoViewController: UIViewController {
         marker.map = mapView
     }
     
-
+    @IBAction func openFb(_ sender: UIButton) {
+        openUrl("https://www.facebook.com/ConsejoGinecologia/")
+    }
+    @IBAction func openTw(_ sender: Any) {
+        openUrl("https://twitter.com/ConsejoGineco/")
+    }
+    
     /*
     // MARK: - Navigation
 

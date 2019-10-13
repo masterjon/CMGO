@@ -378,7 +378,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Gr-FG-ntB">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="617.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="703.5"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="P8-2" translatesAutoresizingMaskIntoConstraints="NO" id="b8L-st-Yzw">
                                                 <rect key="frame" x="147" y="50" width="120" height="84"/>
@@ -453,6 +453,42 @@ Ingrese su cédula de medicina general y su contraseña para iniciar:</string>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 <dataDetectorType key="dataDetectorTypes" link="YES"/>
                                             </textView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6tJ-U1-yPt">
+                                                <rect key="frame" x="20" y="602.5" width="374" height="71"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Si usted no tiene cuenta" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nae-XO-QTW">
+                                                        <rect key="frame" x="0.0" y="20" width="374" height="21"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="21" id="K5t-p6-ffP"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gco-b8-g3P">
+                                                        <rect key="frame" x="20" y="51" width="334" height="20"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="20" id="4AB-bf-nXs"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Creela aquí">
+                                                            <color key="titleColor" red="0.0039215686269999999" green="0.56470588239999997" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="url:" destination="Fx5-NS-YDj" eventType="touchUpInside" id="dYg-A6-eI5"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="nae-XO-QTW" firstAttribute="leading" secondItem="6tJ-U1-yPt" secondAttribute="leading" id="7DD-ax-XVl"/>
+                                                    <constraint firstAttribute="trailing" secondItem="nae-XO-QTW" secondAttribute="trailing" id="CVh-Ay-8Mz"/>
+                                                    <constraint firstItem="nae-XO-QTW" firstAttribute="top" secondItem="6tJ-U1-yPt" secondAttribute="top" constant="20" id="HjT-38-JQw"/>
+                                                    <constraint firstItem="gco-b8-g3P" firstAttribute="top" secondItem="nae-XO-QTW" secondAttribute="bottom" constant="10" id="NtC-Xo-fDi"/>
+                                                    <constraint firstItem="gco-b8-g3P" firstAttribute="leading" secondItem="6tJ-U1-yPt" secondAttribute="leading" constant="20" id="ReA-bM-DnI"/>
+                                                    <constraint firstAttribute="trailing" secondItem="gco-b8-g3P" secondAttribute="trailing" constant="20" id="jWu-ef-vtS"/>
+                                                    <constraint firstAttribute="bottom" secondItem="gco-b8-g3P" secondAttribute="bottom" id="vnu-D0-Nta"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -462,7 +498,10 @@ Ingrese su cédula de medicina general y su contraseña para iniciar:</string>
                                             <constraint firstAttribute="trailing" secondItem="9A7-Nr-5sq" secondAttribute="trailing" constant="20" id="Fmc-Ub-Nue"/>
                                             <constraint firstAttribute="trailing" secondItem="EgU-5f-iYW" secondAttribute="trailing" constant="20" id="MGD-Dt-nZK"/>
                                             <constraint firstItem="EgU-5f-iYW" firstAttribute="leading" secondItem="2Gr-FG-ntB" secondAttribute="leading" constant="20" id="Mo2-pq-P95"/>
-                                            <constraint firstAttribute="bottom" secondItem="EgU-5f-iYW" secondAttribute="bottom" constant="30" id="SOd-3q-o2U"/>
+                                            <constraint firstAttribute="trailing" secondItem="6tJ-U1-yPt" secondAttribute="trailing" constant="20" id="O02-gJ-koI"/>
+                                            <constraint firstAttribute="bottom" secondItem="6tJ-U1-yPt" secondAttribute="bottom" constant="30" id="Sc8-q6-mLW"/>
+                                            <constraint firstItem="6tJ-U1-yPt" firstAttribute="leading" secondItem="2Gr-FG-ntB" secondAttribute="leading" constant="20" id="V9m-3q-0am"/>
+                                            <constraint firstItem="6tJ-U1-yPt" firstAttribute="top" secondItem="EgU-5f-iYW" secondAttribute="bottom" constant="15" id="ZTc-wh-rkJ"/>
                                             <constraint firstItem="EgU-5f-iYW" firstAttribute="top" secondItem="9A7-Nr-5sq" secondAttribute="bottom" constant="16" id="cmS-Mv-Fnd"/>
                                             <constraint firstItem="9A7-Nr-5sq" firstAttribute="top" secondItem="b8L-st-Yzw" secondAttribute="bottom" constant="24" id="eHt-VJ-b3c"/>
                                             <constraint firstItem="b8L-st-Yzw" firstAttribute="centerX" secondItem="2Gr-FG-ntB" secondAttribute="centerX" id="hql-MB-E6O"/>
@@ -477,52 +516,13 @@ Ingrese su cédula de medicina general y su contraseña para iniciar:</string>
                                     <constraint firstAttribute="trailing" secondItem="2Gr-FG-ntB" secondAttribute="trailing" id="jVX-Bh-ROK"/>
                                 </constraints>
                             </scrollView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6tJ-U1-yPt">
-                                <rect key="frame" x="20" y="761" width="374" height="71"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Si usted no tiene cuenta" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nae-XO-QTW">
-                                        <rect key="frame" x="0.0" y="20" width="374" height="21"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="21" id="K5t-p6-ffP"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gco-b8-g3P">
-                                        <rect key="frame" x="20" y="51" width="334" height="20"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="20" id="4AB-bf-nXs"/>
-                                        </constraints>
-                                        <state key="normal" title="Creela aquí">
-                                            <color key="titleColor" red="0.0039215686269999999" green="0.56470588239999997" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="url:" destination="Fx5-NS-YDj" eventType="touchUpInside" id="dYg-A6-eI5"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="nae-XO-QTW" firstAttribute="leading" secondItem="6tJ-U1-yPt" secondAttribute="leading" id="7DD-ax-XVl"/>
-                                    <constraint firstAttribute="trailing" secondItem="nae-XO-QTW" secondAttribute="trailing" id="CVh-Ay-8Mz"/>
-                                    <constraint firstItem="nae-XO-QTW" firstAttribute="top" secondItem="6tJ-U1-yPt" secondAttribute="top" constant="20" id="HjT-38-JQw"/>
-                                    <constraint firstItem="gco-b8-g3P" firstAttribute="top" secondItem="nae-XO-QTW" secondAttribute="bottom" constant="10" id="NtC-Xo-fDi"/>
-                                    <constraint firstItem="gco-b8-g3P" firstAttribute="leading" secondItem="6tJ-U1-yPt" secondAttribute="leading" constant="20" id="ReA-bM-DnI"/>
-                                    <constraint firstAttribute="trailing" secondItem="gco-b8-g3P" secondAttribute="trailing" constant="20" id="jWu-ef-vtS"/>
-                                    <constraint firstAttribute="bottom" secondItem="gco-b8-g3P" secondAttribute="bottom" id="vnu-D0-Nta"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="4Yu-F0-l2f" firstAttribute="leading" secondItem="LUk-Hb-Mah" secondAttribute="leading" id="5zn-Hu-P8I"/>
-                            <constraint firstItem="6tJ-U1-yPt" firstAttribute="leading" secondItem="LUk-Hb-Mah" secondAttribute="leading" constant="20" id="Jfw-w9-Tqk"/>
                             <constraint firstItem="4Yu-F0-l2f" firstAttribute="top" secondItem="LUk-Hb-Mah" secondAttribute="top" id="YLo-ZM-ZhK"/>
                             <constraint firstItem="2Gr-FG-ntB" firstAttribute="width" secondItem="rkZ-PY-x9s" secondAttribute="width" id="det-4h-lca"/>
                             <constraint firstItem="4Yu-F0-l2f" firstAttribute="trailing" secondItem="LUk-Hb-Mah" secondAttribute="trailing" id="gmH-By-x3v"/>
-                            <constraint firstItem="LUk-Hb-Mah" firstAttribute="bottom" secondItem="6tJ-U1-yPt" secondAttribute="bottom" constant="30" id="qd1-eQ-LxA"/>
-                            <constraint firstItem="LUk-Hb-Mah" firstAttribute="trailing" secondItem="6tJ-U1-yPt" secondAttribute="trailing" constant="20" id="tpk-6n-xH8"/>
                             <constraint firstAttribute="bottom" secondItem="4Yu-F0-l2f" secondAttribute="bottom" id="unm-AO-FJL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="LUk-Hb-Mah"/>
@@ -635,15 +635,25 @@ Ingrese su cédula de medicina general y su contraseña para iniciar:</string>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iwz-sg-U0E">
+                                                        <rect key="frame" x="0.0" y="0.0" width="189" height="30"/>
+                                                        <connections>
+                                                            <action selector="openFb:" destination="j3C-u8-AzV" eventType="touchUpInside" id="fIx-as-ahi"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
+                                                    <constraint firstItem="iwz-sg-U0E" firstAttribute="top" secondItem="5fu-qz-ecW" secondAttribute="top" id="FCo-qn-1GE"/>
                                                     <constraint firstItem="Cwc-CR-owY" firstAttribute="top" secondItem="5fu-qz-ecW" secondAttribute="top" id="J4y-qh-kp9"/>
                                                     <constraint firstAttribute="bottom" secondItem="Xi8-ea-lpy" secondAttribute="bottom" id="YZb-Qb-1vs"/>
+                                                    <constraint firstAttribute="trailing" secondItem="iwz-sg-U0E" secondAttribute="trailing" id="bLu-WP-zoR"/>
                                                     <constraint firstAttribute="trailing" secondItem="Xi8-ea-lpy" secondAttribute="trailing" id="dvM-qC-fbA"/>
+                                                    <constraint firstItem="iwz-sg-U0E" firstAttribute="leading" secondItem="5fu-qz-ecW" secondAttribute="leading" id="dzG-4L-n22"/>
                                                     <constraint firstItem="Xi8-ea-lpy" firstAttribute="top" secondItem="5fu-qz-ecW" secondAttribute="top" id="ej8-Jd-DTV"/>
                                                     <constraint firstAttribute="bottom" secondItem="Cwc-CR-owY" secondAttribute="bottom" id="nFw-Np-ugd"/>
                                                     <constraint firstItem="Xi8-ea-lpy" firstAttribute="leading" secondItem="Cwc-CR-owY" secondAttribute="trailing" constant="5" id="nhI-La-fB5"/>
+                                                    <constraint firstAttribute="bottom" secondItem="iwz-sg-U0E" secondAttribute="bottom" id="oRj-7w-OGd"/>
                                                     <constraint firstItem="Cwc-CR-owY" firstAttribute="leading" secondItem="5fu-qz-ecW" secondAttribute="leading" id="qmf-Wf-FZU"/>
                                                 </constraints>
                                             </view>
@@ -663,14 +673,24 @@ Ingrese su cédula de medicina general y su contraseña para iniciar:</string>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cEe-Cg-mdr">
+                                                        <rect key="frame" x="0.0" y="0.0" width="162" height="30"/>
+                                                        <connections>
+                                                            <action selector="openTw:" destination="j3C-u8-AzV" eventType="touchUpInside" id="Hnn-M9-HOq"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="cEe-Cg-mdr" secondAttribute="trailing" id="3td-i3-QJg"/>
                                                     <constraint firstItem="YGl-ga-5YG" firstAttribute="top" secondItem="zab-4W-WaO" secondAttribute="top" id="BQf-SC-dgE"/>
                                                     <constraint firstItem="YGl-ga-5YG" firstAttribute="leading" secondItem="hxN-ht-GVB" secondAttribute="trailing" constant="5" id="KUH-Eg-c0g"/>
                                                     <constraint firstAttribute="trailing" secondItem="YGl-ga-5YG" secondAttribute="trailing" id="Oqa-AD-xMi"/>
                                                     <constraint firstAttribute="bottom" secondItem="hxN-ht-GVB" secondAttribute="bottom" id="UNt-8W-HUw"/>
+                                                    <constraint firstAttribute="bottom" secondItem="cEe-Cg-mdr" secondAttribute="bottom" id="UbH-h9-CwP"/>
                                                     <constraint firstItem="hxN-ht-GVB" firstAttribute="leading" secondItem="zab-4W-WaO" secondAttribute="leading" id="VRF-e9-Kgi"/>
+                                                    <constraint firstItem="cEe-Cg-mdr" firstAttribute="top" secondItem="zab-4W-WaO" secondAttribute="top" id="c9C-hh-JBe"/>
+                                                    <constraint firstItem="cEe-Cg-mdr" firstAttribute="leading" secondItem="zab-4W-WaO" secondAttribute="leading" id="g82-nf-SFZ"/>
                                                     <constraint firstAttribute="bottom" secondItem="YGl-ga-5YG" secondAttribute="bottom" id="gmt-ny-B6d"/>
                                                     <constraint firstItem="hxN-ht-GVB" firstAttribute="top" secondItem="zab-4W-WaO" secondAttribute="top" id="xP4-C0-dCb"/>
                                                 </constraints>
@@ -756,7 +776,7 @@ Ingrese su cédula de medicina general y su contraseña para iniciar:</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Naw-pa-6Cp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6139" y="532"/>
+            <point key="canvasLocation" x="6137.68115942029" y="531.69642857142856"/>
         </scene>
         <!--Noticias-->
         <scene sceneID="3OB-J0-zwc">
@@ -788,12 +808,12 @@ Ingrese su cédula de medicina general y su contraseña para iniciar:</string>
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="I0Z-Rg-q24">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="I0Z-Rg-q24">
                                 <rect key="frame" x="0.0" y="210.5" width="414" height="685.5"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="73" id="XEg-vE-zyF" customClass="TestTableViewCell" customModule="CMGO" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="55.5" width="414" height="73"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="73"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XEg-vE-zyF" id="kaF-xt-sCD">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="72.5"/>
@@ -863,6 +883,10 @@ Ingrese su cédula de medicina general y su contraseña para iniciar:</string>
                                     <action selector="openLink:" destination="zfc-6e-2eQ" eventType="touchUpInside" id="wcp-g5-7E7"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Fpa-ed-Qth">
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                                <color key="color" red="0.4039215686" green="0.63921568630000003" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -874,7 +898,9 @@ Ingrese su cédula de medicina general y su contraseña para iniciar:</string>
                             <constraint firstItem="I0Z-Rg-q24" firstAttribute="trailing" secondItem="gvi-lR-R3F" secondAttribute="trailing" id="dcO-Nh-aEa"/>
                             <constraint firstAttribute="bottom" secondItem="I0Z-Rg-q24" secondAttribute="bottom" id="evF-o0-qQd"/>
                             <constraint firstItem="9U8-3y-dnK" firstAttribute="top" secondItem="Djy-j7-WVE" secondAttribute="bottom" constant="20" id="fPK-oJ-t1g"/>
+                            <constraint firstItem="Fpa-ed-Qth" firstAttribute="centerY" secondItem="z8n-EF-3Tx" secondAttribute="centerY" id="jWf-y5-hcy"/>
                             <constraint firstItem="9U8-3y-dnK" firstAttribute="centerX" secondItem="z8n-EF-3Tx" secondAttribute="centerX" id="v4f-K9-r5M"/>
+                            <constraint firstItem="Fpa-ed-Qth" firstAttribute="centerX" secondItem="z8n-EF-3Tx" secondAttribute="centerX" id="xb7-kz-Di3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gvi-lR-R3F"/>
                     </view>
@@ -886,6 +912,7 @@ Ingrese su cédula de medicina general y su contraseña para iniciar:</string>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="loadingIndicator" destination="Fpa-ed-Qth" id="0K3-Nd-ib5"/>
                         <outlet property="tableView" destination="I0Z-Rg-q24" id="bHc-FN-gfi"/>
                     </connections>
                 </viewController>
@@ -1088,7 +1115,7 @@ Ingrese su cédula de medicina general y su contraseña para iniciar:</string>
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="64" id="tX1-LO-G1X">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" rowHeight="64" id="tX1-LO-G1X">
                                         <rect key="frame" x="0.0" y="55.5" width="414" height="64"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tX1-LO-G1X" id="MbH-4Y-BNd">
@@ -1960,11 +1987,17 @@ Para utilizar esta herramienta, deberá haber iniciado su expediente de VIGENCIA
                                     <outlet property="dataSource" destination="NTy-lB-vAH" id="KkD-Ov-2JJ"/>
                                 </connections>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="UrV-JS-5Ak">
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                                <color key="color" red="0.4039215686" green="0.63921568630000003" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="bhT-6D-lRx" firstAttribute="trailing" secondItem="DrL-fI-Via" secondAttribute="trailing" id="4vQ-Go-2NW"/>
                             <constraint firstItem="bhT-6D-lRx" firstAttribute="top" secondItem="DrL-fI-Via" secondAttribute="top" id="Bg3-w3-IuM"/>
+                            <constraint firstItem="UrV-JS-5Ak" firstAttribute="centerX" secondItem="RS4-6A-qqo" secondAttribute="centerX" id="aAK-2f-bK0"/>
+                            <constraint firstItem="UrV-JS-5Ak" firstAttribute="centerY" secondItem="RS4-6A-qqo" secondAttribute="centerY" id="i17-Vo-ic0"/>
                             <constraint firstItem="bhT-6D-lRx" firstAttribute="bottom" secondItem="DrL-fI-Via" secondAttribute="bottom" id="kyC-xW-yKX"/>
                             <constraint firstItem="bhT-6D-lRx" firstAttribute="leading" secondItem="DrL-fI-Via" secondAttribute="leading" id="n8M-7X-TsH"/>
                         </constraints>
@@ -1974,6 +2007,7 @@ Para utilizar esta herramienta, deberá haber iniciado su expediente de VIGENCIA
                         <barButtonItem key="rightBarButtonItem" title="Item" image="menu" id="N3j-GL-FGb"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="loadingIndicator" destination="UrV-JS-5Ak" id="bNu-Cx-cWX"/>
                         <outlet property="tableView" destination="bhT-6D-lRx" id="iYp-zN-Yjf"/>
                     </connections>
                 </viewController>
@@ -2299,7 +2333,7 @@ Para utilizar esta herramienta, deberá haber iniciado su expediente de VIGENCIA
         <segue reference="fL7-g4-7Gh"/>
         <segue reference="CKG-rk-pB0"/>
         <segue reference="OhF-wX-2ND"/>
-        <segue reference="nvx-7d-QgN"/>
+        <segue reference="bE8-ar-Y0D"/>
         <segue reference="eXy-eh-bRT"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -82,6 +82,7 @@ extension AreasOportunidadViewController: UITableViewDataSource{
         let item = areaList[indexPath.section][indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = item.tema
+        cell.textLabel?.numberOfLines = 0
         return cell
     }
     

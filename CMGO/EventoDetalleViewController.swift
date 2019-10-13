@@ -32,7 +32,7 @@ class EventoDetalleViewController: UIViewController {
         institucionLabel.text = evento.nombre_institucion
         mailBtn.setTitle(evento.correo, for: .normal)
         telBtn.setTitle(evento.telefono, for: .normal)
-        sedeLabel.text = "\(evento.estado), \(evento.municipio)"
+        sedeLabel.text = "\(evento.estado), \(evento.municipio ?? "")"
         direccionLabel.text = evento.direccion
         fechaLabel.text = "\(evento.formatedDateStart()) - \(evento.formatedDateEnd()) \(evento.formatedYear())"
         // Do any additional setup after loading the view.
