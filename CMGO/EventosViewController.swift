@@ -85,6 +85,7 @@ class EventosViewController: UIViewController {
                             }
                         }
                     }
+                    self.stateList = self.stateList.sorted(by: { $0.title < $1.title })
                     self.tableView.reloadData()
                 }
                 print(self.events)
