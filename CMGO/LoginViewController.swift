@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import KeychainAccess
+import SafariServices
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
 
@@ -34,7 +35,14 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func url(_ sender: UIButton) {
-        openUrl("https://cmgo.org.mx/core/index.php/login")
+        // check if website exists
+        guard let url = URL(string: "https://cmgo.org.mx/core/index.php/login") else {
+            return
+        }
+        
+        let safariVC = SFSafariViewController(url: url)
+        safariVC.modalPresentationStyle = .pageSheet
+        present(safariVC, animated: true, completion: nil)
     }
     @objc func dismissKeyboard(){
         self.usernameTextField.resignFirstResponder()
