@@ -8,6 +8,7 @@
 
 import Foundation
 struct Area {
+    let idTema:String
     let area:String
     let tema:String
 }

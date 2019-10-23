@@ -44,6 +44,7 @@
 		FCA0AEAD23160C61003BC16F /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA0AEAC23160C61003BC16F /* Utils.swift */; };
 		FCA0AEAF23161410003BC16F /* EventosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA0AEAE23161410003BC16F /* EventosViewController.swift */; };
 		FCA0AEB123161446003BC16F /* ExamenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA0AEB023161446003BC16F /* ExamenViewController.swift */; };
+		FCEBF212235FB2ED001BB133 /* AreaTemasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEBF211235FB2ED001BB133 /* AreaTemasViewController.swift */; };
 		FCEEBD3B23496F1F008C4783 /* LogoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEBD3A23496F1F008C4783 /* LogoutViewController.swift */; };
 		FCFC02AB234177420005BACC /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFC02AA234177410005BACC /* ScannerViewController.swift */; };
 		FCFC02AD23417B9D0005BACC /* QRScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFC02AC23417B9D0005BACC /* QRScannerViewController.swift */; };
@@ -96,6 +97,7 @@
 		FCA0AEAC23160C61003BC16F /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		FCA0AEAE23161410003BC16F /* EventosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventosViewController.swift; sourceTree = "<group>"; };
 		FCA0AEB023161446003BC16F /* ExamenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamenViewController.swift; sourceTree = "<group>"; };
+		FCEBF211235FB2ED001BB133 /* AreaTemasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaTemasViewController.swift; sourceTree = "<group>"; };
 		FCEEBD3A23496F1F008C4783 /* LogoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutViewController.swift; sourceTree = "<group>"; };
 		FCFC02AA234177410005BACC /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
 		FCFC02AC23417B9D0005BACC /* QRScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerViewController.swift; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 				FC7316F92320ACA000DF5F48 /* ExamenDetalleViewController.swift */,
 				FC4BED1823442B21000A7A88 /* ExamenCertViewController.swift */,
 				FC4BED222344F3EF000A7A88 /* AreasOportunidadViewController.swift */,
+				FCEBF211235FB2ED001BB133 /* AreaTemasViewController.swift */,
 			);
 			name = Examen;
 			sourceTree = "<group>";
@@ -422,6 +425,7 @@
 				FC34BD0B230BA67400C5B7E2 /* AppDelegate.swift in Sources */,
 				FCFC02B223419B950005BACC /* NoticiasViewController.swift in Sources */,
 				FC0A444823215DC4009338A7 /* CedulaTableViewCell.swift in Sources */,
+				FCEBF212235FB2ED001BB133 /* AreaTemasViewController.swift in Sources */,
 				FCFC02AF23417F710005BACC /* NetworkManager.swift in Sources */,
 				FC4BED1B2344563F000A7A88 /* EventosTabViewController.swift in Sources */,
 				FC4BED1D23446DB2000A7A88 /* Evento.swift in Sources */,

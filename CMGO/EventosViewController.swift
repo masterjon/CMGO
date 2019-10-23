@@ -11,12 +11,13 @@ import Alamofire
 import SwiftyJSON
 
 enum EventListDisplay {
-    case byDate, byTopic, byState
+    case byDate, byTopic, byState, bySubTopic
 }
 class EventosViewController: UIViewController {
 
     var events = [Evento]()
     var temaParentList = [TemaParent]()
+    var temaGrandParentList = [TemaGrandParent]()
     var stateList = [TemaParent]()
     var listType: EventListDisplay!
     
@@ -32,24 +33,39 @@ class EventosViewController: UIViewController {
             getEvents(byState: true)
         case .byTopic:
             getEventsByTopic()
+        case .bySubTopic:
+            loadingIndicator.stopAnimating()
+            self.navigationItem.rightBarButtonItem = nil
         }
+        
         // Do any additional setup after loading the view.
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let indexPath = tableView.indexPathForSelectedRow{
-            let item:Evento
-            switch listType! {
-            case .byTopic,.byDate:
-                item = temaParentList[indexPath.section].events[indexPath.row]
-                
-            case .byState:
-                item = stateList[indexPath.section].events[indexPath.row]
-            }
-            let vc = segue.destination as! EventoDetalleViewController
-            vc.evento = item
-        }
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if let indexPath = tableView.indexPathForSelectedRow{
+//
+//            switch listType! {
+//            case .byTopic:
+//                let temaGrandParent = temaGrandParentList[indexPath.row]
+//                let vc = segue.destination as! EventosViewController
+//                vc.listType = .bySubTopic
+//                vc.title = temaGrandParent.title
+//                vc.temaParentList = temaGrandParent.temaParents
+//
+//            case .byDate,.bySubTopic:
+//                let item = temaParentList[indexPath.section].events[indexPath.row]
+//                let vc = segue.destination as! EventoDetalleViewController
+//                vc.evento = item
+//            case .byState:
+//                let item = stateList[indexPath.section].events[indexPath.row]
+//                let vc = segue.destination as! EventoDetalleViewController
+//                vc.evento = item
+//            }
+//
+//
+//
+//        }
+//    }
     
     func getEvents(byState:Bool=false){
         Alamofire.request("https://cmgo.org.mx/core/index.php/solicitud_puntaje/eventos_service/estado/", headers:getHttpHeaders()).validate().responseJSON { (response) in
@@ -102,14 +118,19 @@ class EventosViewController: UIViewController {
             switch response.result{
             case .success(let value):
                 let json = JSON(value)
-                for tema in json["msg"].arrayValue{
-                    if let data = try? tema["eventos"].rawData(){
-                        print(tema["eventos"])
-                        if let e = try? JSONDecoder().decode([Evento].self, from: data){
-                            let temaParent = TemaParent(title: tema["tema"].stringValue, events: e)
-                            self.temaParentList.append(temaParent)
+                for temaParent in json["msg"].arrayValue{
+                    var temaParentList = [TemaParent]()
+                    for tema in temaParent["temas"].arrayValue{
+                        if let data = try? tema["eventos"].rawData(){
+                            print(tema["eventos"])
+                            if let e = try? JSONDecoder().decode([Evento].self, from: data){
+                                let temaParent = TemaParent(title: tema["tema"].stringValue, events: e)
+                                temaParentList.append(temaParent)
+                            }
                         }
                     }
+                    let temaGrandParent = TemaGrandParent(title: temaParent["nombre_especialidad"].stringValue, temaParents: temaParentList)
+                    self.temaGrandParentList.append(temaGrandParent)
                 }
                 self.tableView.reloadData()
                 print(self.events)
@@ -146,11 +167,13 @@ class EventosViewController: UIViewController {
     }
 }
 
-extension EventosViewController:UITableViewDataSource{
+extension EventosViewController:UITableViewDataSource, UITableViewDelegate{
     
     func numberOfSections(in tableView: UITableView) -> Int {
         switch listType! {
-        case .byTopic,.byDate:
+        case .byTopic:
+            return 1
+        case .byDate,.bySubTopic:
             return temaParentList.count
         case .byState:
             return stateList.count
@@ -159,7 +182,9 @@ extension EventosViewController:UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch listType! {
-        case .byTopic,.byDate:
+        case .byTopic:
+            return ""
+        case .byDate,.bySubTopic:
             return temaParentList[section].title
         case .byState:
             return stateList[section].title
@@ -167,7 +192,12 @@ extension EventosViewController:UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch listType! {
-        case .byTopic, .byDate:
+        case .byTopic:
+            if !temaGrandParentList.isEmpty{
+                return temaGrandParentList.count
+            }
+            else{ return 0}
+        case .byDate,.bySubTopic:
             if !temaParentList.isEmpty{
                 print("Tema count")
                 return temaParentList[section].events.count
@@ -184,22 +214,54 @@ extension EventosViewController:UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let item:Evento
+        let item:Any
         
         switch listType! {
-        case .byTopic,.byDate:
+        case .byTopic:
+            item = temaGrandParentList[indexPath.row]
+        case .byDate,.bySubTopic:
             item = temaParentList[indexPath.section].events[indexPath.row]
-            
         case .byState:
             item = stateList[indexPath.section].events[indexPath.row]
         }
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TestTableViewCell
-        cell.titleLabel.text = item.nombre_evento
-        cell.dateLabel.text = "\(item.formatedDateStart()) - \(item.formatedDateEnd())"
-        cell.timeLabel.text = "\(item.estado), \(item.municipio ?? "")"
+        if let item = item as? Evento{
+            cell.titleLabel.text = item.nombre_evento
+            cell.dateLabel.text = "\(item.formatedDateStart()) - \(item.formatedDateEnd())"
+            cell.timeLabel.text = "\(item.estado), \(item.municipio ?? "")"
+            cell.dateLabel.textColor = .black
+        }
+        else if let tema = item as? TemaGrandParent{
+            cell.titleLabel.text = tema.title
+            cell.timeLabel.text = ""
+            cell.dateLabel.text = "Ver temas >"
+            cell.dateLabel.textColor = ColorPalette.LightGreen
+        }
         return cell
     }
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        switch listType! {
+        case .byTopic:
+            let temaGrandParent = temaGrandParentList[indexPath.row]
+            let vc = storyBoard.instantiateViewController(withIdentifier: "EventosVC") as! EventosViewController
+            vc.listType = .bySubTopic
+            vc.title = temaGrandParent.title
+            vc.temaParentList = temaGrandParent.temaParents
+            self.navigationController?.pushViewController(vc, animated: true)
+        case .byDate,.bySubTopic:
+            let item = temaParentList[indexPath.section].events[indexPath.row]
+            let vc = storyBoard.instantiateViewController(withIdentifier: "EventoDetalleVC") as! EventoDetalleViewController
+            vc.evento = item
+            self.navigationController?.pushViewController(vc, animated: true)
+        case .byState:
+            let item = stateList[indexPath.section].events[indexPath.row]
+            let vc = storyBoard.instantiateViewController(withIdentifier: "EventoDetalleVC") as! EventoDetalleViewController
+            vc.evento = item
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        
+    }
 }

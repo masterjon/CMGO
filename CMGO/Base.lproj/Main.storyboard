@@ -865,6 +865,7 @@ Ingrese su cédula de medicina general y su contraseña para iniciar:</string>
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="zfc-6e-2eQ" id="cAK-eO-6lZ"/>
+                                    <outlet property="delegate" destination="zfc-6e-2eQ" id="jsO-cz-y7p"/>
                                 </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Próximas fechas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9U8-3y-dnK">
@@ -1115,13 +1116,16 @@ Ingrese su cédula de medicina general y su contraseña para iniciar:</string>
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" rowHeight="64" id="tX1-LO-G1X">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" rowHeight="64" id="tX1-LO-G1X">
                                         <rect key="frame" x="0.0" y="55.5" width="414" height="64"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tX1-LO-G1X" id="MbH-4Y-BNd">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="63.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="376" height="63.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="SFK-jk-YpY" kind="show" id="4cD-QU-gke"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -1163,6 +1167,109 @@ Ingrese su cédula de medicina general y su contraseña para iniciar:</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1BB-Za-aBH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="253.62318840579712" y="2177.0089285714284"/>
+        </scene>
+        <!--Area Temas View Controller-->
+        <scene sceneID="SqO-R9-D3Y">
+            <objects>
+                <viewController id="SFK-jk-YpY" customClass="AreaTemasViewController" customModule="CMGO" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="e3P-uQ-fGI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="dBp-Ph-zva">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="100" id="EGO-Nv-fYj" customClass="TestTableViewCell" customModule="CMGO" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="55.5" width="414" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EGO-Nv-fYj" id="XQ5-L0-MFn">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="99.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="aFs-lE-daz">
+                                                    <rect key="frame" x="15" y="15" width="384" height="69.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P6I-fs-MuP">
+                                                            <rect key="frame" x="0.0" y="0.0" width="384" height="39"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="lbh-sQ-HDh">
+                                                            <rect key="frame" x="0.0" y="49" width="384" height="20.5"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pOT-Yo-GT2">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="192" height="20.5"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iNH-gb-CCL">
+                                                                    <rect key="frame" x="192" y="0.0" width="192" height="20.5"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="aFs-lE-daz" secondAttribute="trailing" constant="15" id="6pT-s9-wii"/>
+                                                <constraint firstItem="aFs-lE-daz" firstAttribute="top" secondItem="XQ5-L0-MFn" secondAttribute="top" constant="15" id="LrN-Gr-efh"/>
+                                                <constraint firstItem="aFs-lE-daz" firstAttribute="leading" secondItem="XQ5-L0-MFn" secondAttribute="leading" constant="15" id="a5B-rU-ucz"/>
+                                                <constraint firstAttribute="bottom" secondItem="aFs-lE-daz" secondAttribute="bottom" constant="15" id="oGZ-RW-nvs"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dateLabel" destination="iNH-gb-CCL" id="IQq-MU-oPP"/>
+                                            <outlet property="timeLabel" destination="pOT-Yo-GT2" id="yvu-y9-L62"/>
+                                            <outlet property="titleLabel" destination="P6I-fs-MuP" id="CpY-hv-5RM"/>
+                                            <segue destination="KQK-4b-c3a" kind="show" id="fhf-4G-EbZ"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="SFK-jk-YpY" id="HUs-aT-Esx"/>
+                                </connections>
+                            </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="dCo-Tw-erf">
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                                <color key="color" red="0.4039215686" green="0.63921568630000003" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zlp-Ab-ZHF">
+                                <rect key="frame" x="15" y="448" width="384" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="dBp-Ph-zva" firstAttribute="top" secondItem="XYA-Ts-sAR" secondAttribute="top" id="4gL-Co-mpk"/>
+                            <constraint firstItem="dCo-Tw-erf" firstAttribute="centerX" secondItem="e3P-uQ-fGI" secondAttribute="centerX" id="96v-iP-K2L"/>
+                            <constraint firstItem="Zlp-Ab-ZHF" firstAttribute="leading" secondItem="e3P-uQ-fGI" secondAttribute="leading" constant="15" id="EnP-fd-zGm"/>
+                            <constraint firstItem="dCo-Tw-erf" firstAttribute="centerY" secondItem="e3P-uQ-fGI" secondAttribute="centerY" id="FP4-KW-HOD"/>
+                            <constraint firstItem="dBp-Ph-zva" firstAttribute="leading" secondItem="XYA-Ts-sAR" secondAttribute="leading" id="LQX-yE-sWA"/>
+                            <constraint firstItem="dBp-Ph-zva" firstAttribute="bottom" secondItem="XYA-Ts-sAR" secondAttribute="bottom" id="LZR-b7-Q9l"/>
+                            <constraint firstItem="Zlp-Ab-ZHF" firstAttribute="centerX" secondItem="e3P-uQ-fGI" secondAttribute="centerX" id="aIf-Ex-fIc"/>
+                            <constraint firstItem="Zlp-Ab-ZHF" firstAttribute="centerY" secondItem="e3P-uQ-fGI" secondAttribute="centerY" id="eiD-q5-shp"/>
+                            <constraint firstItem="dBp-Ph-zva" firstAttribute="trailing" secondItem="XYA-Ts-sAR" secondAttribute="trailing" id="rnM-S2-g7M"/>
+                            <constraint firstAttribute="trailing" secondItem="Zlp-Ab-ZHF" secondAttribute="trailing" constant="15" id="v6y-Nd-73n"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="XYA-Ts-sAR"/>
+                    </view>
+                    <connections>
+                        <outlet property="errorLabel" destination="Zlp-Ab-ZHF" id="cEx-ik-d1n"/>
+                        <outlet property="loadingIndicato" destination="dCo-Tw-erf" id="IEp-nb-pYF"/>
+                        <outlet property="tableView" destination="dBp-Ph-zva" id="7aK-ra-nSW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="imK-rn-YN2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1039.1304347826087" y="2184.375"/>
         </scene>
         <!--Blog-->
         <scene sceneID="8tq-kB-s2q">
@@ -1235,10 +1342,10 @@ Ingrese su cédula de medicina general y su contraseña para iniciar:</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rnS-Zz-W5H">
-                                <rect key="frame" x="0.0" y="54" width="414" height="37"/>
+                                <rect key="frame" x="0.0" y="54" width="414" height="17"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Puntos" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dBM-2n-civ">
-                                        <rect key="frame" x="324" y="8" width="70" height="21"/>
+                                        <rect key="frame" x="324" y="4" width="70" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="70" id="CBh-p0-rEn"/>
                                         </constraints>
@@ -1250,8 +1357,8 @@ Ingrese su cédula de medicina general y su contraseña para iniciar:</string>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="dBM-2n-civ" secondAttribute="trailing" constant="20" id="CF5-T4-aVD"/>
-                                    <constraint firstAttribute="bottom" secondItem="dBM-2n-civ" secondAttribute="bottom" constant="8" id="K6L-Ux-toM"/>
-                                    <constraint firstItem="dBM-2n-civ" firstAttribute="top" secondItem="rnS-Zz-W5H" secondAttribute="top" constant="8" id="ntm-e1-sud"/>
+                                    <constraint firstAttribute="bottom" secondItem="dBM-2n-civ" secondAttribute="bottom" constant="-8" id="K6L-Ux-toM"/>
+                                    <constraint firstItem="dBM-2n-civ" firstAttribute="top" secondItem="rnS-Zz-W5H" secondAttribute="top" constant="4" id="ntm-e1-sud"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¿Constancia con código QR?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rdT-WR-mDE">
@@ -1261,7 +1368,7 @@ Ingrese su cédula de medicina general y su contraseña para iniciar:</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lAH-g2-WRX">
-                                <rect key="frame" x="0.0" y="99" width="414" height="677"/>
+                                <rect key="frame" x="0.0" y="79" width="414" height="697"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="RmL-pw-P1O">
                                     <rect key="frame" x="0.0" y="122" width="414" height="44"/>
@@ -1430,21 +1537,199 @@ Ingrese su cédula de medicina general y su contraseña para iniciar:</string>
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="jtr-Z6-25E">
-                                <rect key="frame" x="20" y="64" width="374" height="116.5"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <string key="text">A través de esta aplicación Usted podrá escanear el código QR de sus constancias. 
-Para utilizar esta herramienta, deberá haber iniciado su expediente de VIGENCIA DE CERTIFICACIÓN en nuestro sitio: www.cmgo.org.mx</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
-                            </textView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="P5-2" translatesAutoresizingMaskIntoConstraints="NO" id="bCA-xc-MWN">
-                                <rect key="frame" x="0.0" y="233.5" width="414" height="198.5"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6oz-uE-uzA">
+                                <rect key="frame" x="0.0" y="44" width="414" height="639"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wJE-wl-XNt">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="838"/>
+                                        <subviews>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jtr-Z6-25E">
+                                                <rect key="frame" x="20" y="8" width="374" height="623.5"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment>
+                                                        <mutableString key="content">· A través de esta aplicación Usted podrá escanear el código QR de sus constancias. 
+· Para utilizar esta herramienta, deberá haber iniciado su expediente de VIGENCIA DE CERTIFICACIÓN en nuestro sitio: www.cmgo.org.mx 
+· Al escanear las constancias con QR, estas se añadirán automáticamente a su expediente en la sección correspondiente. 
+· Para que el puntaje sea validado, es responsabilidad del organizador del evento subir la lista de asistentes a nuestro sistema. 
+· La lista de asistentes deberá estar cargada previamente, por lo que sugerimos realizar la carga de constancias en días posteriores al evento.
+
+</mutableString>
+                                                        <attributes>
+                                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                            <font key="NSFont" size="15" name=".SFNSText"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                                <tabStops>
+                                                                    <textTab alignment="left" location="28">
+                                                                        <options/>
+                                                                    </textTab>
+                                                                    <textTab alignment="left" location="56">
+                                                                        <options/>
+                                                                    </textTab>
+                                                                    <textTab alignment="left" location="84">
+                                                                        <options/>
+                                                                    </textTab>
+                                                                    <textTab alignment="left" location="112">
+                                                                        <options/>
+                                                                    </textTab>
+                                                                    <textTab alignment="left" location="140">
+                                                                        <options/>
+                                                                    </textTab>
+                                                                    <textTab alignment="left" location="168">
+                                                                        <options/>
+                                                                    </textTab>
+                                                                    <textTab alignment="left" location="196">
+                                                                        <options/>
+                                                                    </textTab>
+                                                                    <textTab alignment="left" location="224">
+                                                                        <options/>
+                                                                    </textTab>
+                                                                    <textTab alignment="left" location="252">
+                                                                        <options/>
+                                                                    </textTab>
+                                                                    <textTab alignment="left" location="280">
+                                                                        <options/>
+                                                                    </textTab>
+                                                                    <textTab alignment="left" location="308">
+                                                                        <options/>
+                                                                    </textTab>
+                                                                    <textTab alignment="left" location="336">
+                                                                        <options/>
+                                                                    </textTab>
+                                                                </tabStops>
+                                                            </paragraphStyle>
+                                                        </attributes>
+                                                    </fragment>
+                                                    <fragment>
+                                                        <string key="content"> INSTRUCCIONES:
+</string>
+                                                        <attributes>
+                                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                            <font key="NSFont" size="15" name="Arial-BoldMT"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                                <tabStops>
+                                                                    <textTab alignment="left" location="28">
+                                                                        <options/>
+                                                                    </textTab>
+                                                                    <textTab alignment="left" location="56">
+                                                                        <options/>
+                                                                    </textTab>
+                                                                    <textTab alignment="left" location="84">
+                                                                        <options/>
+                                                                    </textTab>
+                                                                    <textTab alignment="left" location="112">
+                                                                        <options/>
+                                                                    </textTab>
+                                                                    <textTab alignment="left" location="140">
+                                                                        <options/>
+                                                                    </textTab>
+                                                                    <textTab alignment="left" location="168">
+                                                                        <options/>
+                                                                    </textTab>
+                                                                    <textTab alignment="left" location="196">
+                                                                        <options/>
+                                                                    </textTab>
+                                                                    <textTab alignment="left" location="224">
+                                                                        <options/>
+                                                                    </textTab>
+                                                                    <textTab alignment="left" location="252">
+                                                                        <options/>
+                                                                    </textTab>
+                                                                    <textTab alignment="left" location="280">
+                                                                        <options/>
+                                                                    </textTab>
+                                                                    <textTab alignment="left" location="308">
+                                                                        <options/>
+                                                                    </textTab>
+                                                                    <textTab alignment="left" location="336">
+                                                                        <options/>
+                                                                    </textTab>
+                                                                </tabStops>
+                                                            </paragraphStyle>
+                                                        </attributes>
+                                                    </fragment>
+                                                    <fragment>
+                                                        <mutableString key="content">
+· Dar click en el botón “ESCANEAR”
+· Coloque su cámara a una distancia donde pueda captar el código completo
+· Al enfocarlo, la aplicación cotejará su asistencia al evento y le arrojará el mensaje de validación.
+· Si por alguna razón no pudiera escanearlo, puede ingresar manualmente la clave del evento de 20 dígitos con el botón “INGRESAR CÓDIGO”.
+· En caso de necesitar soporte técnico contáctenos aquí o al teléfono 5590009538  </mutableString>
+                                                        <attributes>
+                                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                            <font key="NSFont" size="15" name=".SFNSText"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                                <tabStops>
+                                                                    <textTab alignment="left" location="28">
+                                                                        <options/>
+                                                                    </textTab>
+                                                                    <textTab alignment="left" location="56">
+                                                                        <options/>
+                                                                    </textTab>
+                                                                    <textTab alignment="left" location="84">
+                                                                        <options/>
+                                                                    </textTab>
+                                                                    <textTab alignment="left" location="112">
+                                                                        <options/>
+                                                                    </textTab>
+                                                                    <textTab alignment="left" location="140">
+                                                                        <options/>
+                                                                    </textTab>
+                                                                    <textTab alignment="left" location="168">
+                                                                        <options/>
+                                                                    </textTab>
+                                                                    <textTab alignment="left" location="196">
+                                                                        <options/>
+                                                                    </textTab>
+                                                                    <textTab alignment="left" location="224">
+                                                                        <options/>
+                                                                    </textTab>
+                                                                    <textTab alignment="left" location="252">
+                                                                        <options/>
+                                                                    </textTab>
+                                                                    <textTab alignment="left" location="280">
+                                                                        <options/>
+                                                                    </textTab>
+                                                                    <textTab alignment="left" location="308">
+                                                                        <options/>
+                                                                    </textTab>
+                                                                    <textTab alignment="left" location="336">
+                                                                        <options/>
+                                                                    </textTab>
+                                                                </tabStops>
+                                                            </paragraphStyle>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                                            </textView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="P5-2" translatesAutoresizingMaskIntoConstraints="NO" id="bCA-xc-MWN">
+                                                <rect key="frame" x="0.0" y="639.5" width="414" height="198.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="bCA-xc-MWN" secondAttribute="height" multiplier="75:36" id="7tA-la-mM9"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="bCA-xc-MWN" secondAttribute="bottom" id="0cW-jK-DOf"/>
+                                            <constraint firstItem="jtr-Z6-25E" firstAttribute="top" secondItem="wJE-wl-XNt" secondAttribute="top" constant="8" id="BcU-UV-TYc"/>
+                                            <constraint firstItem="jtr-Z6-25E" firstAttribute="leading" secondItem="wJE-wl-XNt" secondAttribute="leading" constant="20" id="Ksc-6M-cDf"/>
+                                            <constraint firstAttribute="trailing" secondItem="jtr-Z6-25E" secondAttribute="trailing" constant="20" id="P76-nf-Dds"/>
+                                            <constraint firstItem="bCA-xc-MWN" firstAttribute="leading" secondItem="wJE-wl-XNt" secondAttribute="leading" id="X4q-GI-rEa"/>
+                                            <constraint firstItem="bCA-xc-MWN" firstAttribute="top" secondItem="jtr-Z6-25E" secondAttribute="bottom" constant="8" id="qzF-39-tdG"/>
+                                            <constraint firstAttribute="trailing" secondItem="bCA-xc-MWN" secondAttribute="trailing" id="wld-vc-FTV"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="bCA-xc-MWN" secondAttribute="height" multiplier="75:36" id="7tA-la-mM9"/>
+                                    <constraint firstItem="wJE-wl-XNt" firstAttribute="top" secondItem="6oz-uE-uzA" secondAttribute="top" id="7R6-V8-t2D"/>
+                                    <constraint firstAttribute="trailing" secondItem="wJE-wl-XNt" secondAttribute="trailing" id="N4d-VQ-qEa"/>
+                                    <constraint firstAttribute="bottom" secondItem="wJE-wl-XNt" secondAttribute="bottom" id="QMF-xn-bJT"/>
+                                    <constraint firstItem="wJE-wl-XNt" firstAttribute="leading" secondItem="6oz-uE-uzA" secondAttribute="leading" id="VTs-eF-ZIR"/>
                                 </constraints>
-                            </imageView>
+                            </scrollView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="mPA-rM-9wE">
                                 <rect key="frame" x="20" y="703" width="374" height="129"/>
                                 <subviews>
@@ -1467,38 +1752,25 @@ Para utilizar esta herramienta, deberá haber iniciado su expediente de VIGENCIA
                                     </button>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qDG-Xq-XJz">
-                                <rect key="frame" x="20" y="195.5" width="156" height="30"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
-                                <state key="normal" title="Ver más instrucciones">
-                                    <color key="titleColor" red="0.0039215686269999999" green="0.56470588239999997" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="TUv-Jv-dgJ" kind="presentation" id="6LY-Cw-HJK"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="4VY-3l-hzm" firstAttribute="bottom" secondItem="mPA-rM-9wE" secondAttribute="bottom" constant="30" id="7mv-DB-CKf"/>
-                            <constraint firstItem="jtr-Z6-25E" firstAttribute="top" secondItem="4VY-3l-hzm" secondAttribute="top" constant="20" id="AaZ-xN-nye"/>
-                            <constraint firstItem="jtr-Z6-25E" firstAttribute="leading" secondItem="4VY-3l-hzm" secondAttribute="leading" constant="20" id="Cnm-m1-gPS"/>
                             <constraint firstItem="4VY-3l-hzm" firstAttribute="trailing" secondItem="mPA-rM-9wE" secondAttribute="trailing" constant="20" id="Drq-uC-p1m"/>
-                            <constraint firstItem="qDG-Xq-XJz" firstAttribute="leading" secondItem="4VY-3l-hzm" secondAttribute="leading" constant="20" id="J52-EM-FA5"/>
-                            <constraint firstItem="bCA-xc-MWN" firstAttribute="top" secondItem="qDG-Xq-XJz" secondAttribute="bottom" constant="8" id="UYP-5S-fCj"/>
-                            <constraint firstItem="bCA-xc-MWN" firstAttribute="leading" secondItem="4VY-3l-hzm" secondAttribute="leading" id="WNO-kn-PUH"/>
-                            <constraint firstItem="mPA-rM-9wE" firstAttribute="top" relation="greaterThanOrEqual" secondItem="bCA-xc-MWN" secondAttribute="bottom" constant="20" id="XEA-fJ-PxW"/>
+                            <constraint firstItem="mPA-rM-9wE" firstAttribute="top" secondItem="6oz-uE-uzA" secondAttribute="bottom" constant="20" id="EAs-Af-Zqd"/>
+                            <constraint firstItem="6oz-uE-uzA" firstAttribute="width" secondItem="1J1-lS-PgA" secondAttribute="width" id="FDf-lI-buR"/>
+                            <constraint firstItem="6oz-uE-uzA" firstAttribute="top" secondItem="4VY-3l-hzm" secondAttribute="top" id="GmK-vm-7wE"/>
+                            <constraint firstItem="6oz-uE-uzA" firstAttribute="leading" secondItem="4VY-3l-hzm" secondAttribute="leading" id="WEY-MG-YEZ"/>
+                            <constraint firstItem="6oz-uE-uzA" firstAttribute="trailing" secondItem="4VY-3l-hzm" secondAttribute="trailing" id="Xm6-11-Rfk"/>
                             <constraint firstItem="mPA-rM-9wE" firstAttribute="leading" secondItem="4VY-3l-hzm" secondAttribute="leading" constant="20" id="ZJw-xk-lAg"/>
-                            <constraint firstItem="4VY-3l-hzm" firstAttribute="trailing" secondItem="jtr-Z6-25E" secondAttribute="trailing" constant="20" id="c4M-R7-Aqg"/>
-                            <constraint firstItem="4VY-3l-hzm" firstAttribute="trailing" secondItem="bCA-xc-MWN" secondAttribute="trailing" id="orj-Q3-sSO"/>
-                            <constraint firstItem="qDG-Xq-XJz" firstAttribute="top" secondItem="jtr-Z6-25E" secondAttribute="bottom" constant="15" id="pJJ-kV-Vjg"/>
+                            <constraint firstItem="wJE-wl-XNt" firstAttribute="width" secondItem="1J1-lS-PgA" secondAttribute="width" id="bqS-UZ-icE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4VY-3l-hzm"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HUv-ly-rj1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2483" y="1319"/>
+            <point key="canvasLocation" x="2482.608695652174" y="1317.8571428571429"/>
         </scene>
         <!--Scanner View Controller-->
         <scene sceneID="FP1-fU-PQI">
@@ -1681,7 +1953,7 @@ Para utilizar esta herramienta, deberá haber iniciado su expediente de VIGENCIA
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4WE-vD-5HS">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="delegate" destination="41S-Tg-W3b" id="yju-vz-n4K"/>
@@ -1691,26 +1963,42 @@ Para utilizar esta herramienta, deberá haber iniciado su expediente de VIGENCIA
                                 <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
                                 <color key="color" red="0.4039215686" green="0.63921568630000003" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Ov-FP-F23">
+                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                                <items>
+                                    <barButtonItem title="Atrás" id="jEI-2v-wNk">
+                                        <color key="tintColor" red="0.0039215686269999999" green="0.56470588239999997" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="backAction:" destination="41S-Tg-W3b" id="bit-Nh-JZW"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Bk8-8t-5e5" firstAttribute="centerY" secondItem="mRB-Nq-zOI" secondAttribute="centerY" id="8Dx-oB-hfT"/>
+                            <constraint firstItem="8Ov-FP-F23" firstAttribute="top" secondItem="4WE-vD-5HS" secondAttribute="bottom" id="Auz-tl-eGq"/>
+                            <constraint firstItem="8Ov-FP-F23" firstAttribute="top" secondItem="4WE-vD-5HS" secondAttribute="bottom" id="FGu-lr-vcV"/>
                             <constraint firstItem="4WE-vD-5HS" firstAttribute="trailing" secondItem="JQV-vF-qWo" secondAttribute="trailing" id="OOp-iM-0YK"/>
+                            <constraint firstItem="8Ov-FP-F23" firstAttribute="leading" secondItem="JQV-vF-qWo" secondAttribute="leading" id="TrQ-BU-6e3"/>
                             <constraint firstItem="Bk8-8t-5e5" firstAttribute="centerX" secondItem="mRB-Nq-zOI" secondAttribute="centerX" id="bo0-5B-Gwc"/>
-                            <constraint firstItem="4WE-vD-5HS" firstAttribute="bottom" secondItem="JQV-vF-qWo" secondAttribute="bottom" id="i51-Be-kPp"/>
+                            <constraint firstItem="8Ov-FP-F23" firstAttribute="trailing" secondItem="JQV-vF-qWo" secondAttribute="trailing" id="dvi-r3-ugc"/>
+                            <constraint firstItem="8Ov-FP-F23" firstAttribute="bottom" secondItem="JQV-vF-qWo" secondAttribute="bottom" id="kTM-7E-diZ"/>
                             <constraint firstItem="4WE-vD-5HS" firstAttribute="leading" secondItem="JQV-vF-qWo" secondAttribute="leading" id="qrx-5r-LhF"/>
                             <constraint firstItem="4WE-vD-5HS" firstAttribute="top" secondItem="JQV-vF-qWo" secondAttribute="top" id="rwc-sb-88j"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="JQV-vF-qWo"/>
                     </view>
                     <connections>
+                        <outlet property="backButton" destination="jEI-2v-wNk" id="qNL-qF-jbl"/>
                         <outlet property="loadingIndicator" destination="Bk8-8t-5e5" id="84L-OV-LRd"/>
                         <outlet property="webView" destination="4WE-vD-5HS" id="ePz-uR-qUS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ELJ-6t-ggy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4848" y="1343"/>
+            <point key="canvasLocation" x="4847.826086956522" y="1342.6339285714284"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="BNy-pX-AfI">
@@ -1979,12 +2267,12 @@ Para utilizar esta herramienta, deberá haber iniciado su expediente de VIGENCIA
                                             <outlet property="dateLabel" destination="uLd-L9-1Gi" id="u3H-og-rs4"/>
                                             <outlet property="timeLabel" destination="Z61-bO-MVh" id="9zk-sh-Dia"/>
                                             <outlet property="titleLabel" destination="PLK-Gr-PKE" id="hdE-vo-FhD"/>
-                                            <segue destination="KQK-4b-c3a" kind="show" id="2Ri-6D-lTK"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="NTy-lB-vAH" id="KkD-Ov-2JJ"/>
+                                    <outlet property="delegate" destination="NTy-lB-vAH" id="IUE-Df-2Sd"/>
                                 </connections>
                             </tableView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="UrV-JS-5Ak">
@@ -2333,7 +2621,7 @@ Para utilizar esta herramienta, deberá haber iniciado su expediente de VIGENCIA
         <segue reference="fL7-g4-7Gh"/>
         <segue reference="CKG-rk-pB0"/>
         <segue reference="OhF-wX-2ND"/>
-        <segue reference="bE8-ar-Y0D"/>
+        <segue reference="nvx-7d-QgN"/>
         <segue reference="eXy-eh-bRT"/>
     </inferredMetricsTieBreakers>
 </document>

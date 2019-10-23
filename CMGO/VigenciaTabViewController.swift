@@ -14,7 +14,7 @@ class VigenciaTabViewController: TabmanViewController,TabDelegate {
 
     let storyBoard = UIStoryboard(name: "Main", bundle: nil)
     var viewControllers = [UIViewController]()
-    let barTitles = ["Mi cédula de vigencia", "Ingresa QR"]
+    let barTitles = ["Mi Cédula de Vigencia", "Ingresa QR"]
     var loginShown = false
     override func viewDidLoad() {
         super.viewDidLoad()

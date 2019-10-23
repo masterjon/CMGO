@@ -44,7 +44,7 @@ class AreasOportunidadViewController: UIViewController {
                     for parent in json["msg"].arrayValue{
                         var list = [Area]()
                         for item in parent.arrayValue{
-                            let area = Area(area: item["area"].stringValue, tema: item["tema"].stringValue)
+                            let area = Area(idTema: item["id_tema"].stringValue, area: item["area"].stringValue, tema: item["tema"].stringValue)
                             list.append(area)
                         }
                         self.areaList.append(list)
@@ -66,6 +66,14 @@ class AreasOportunidadViewController: UIViewController {
         }
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let indexPath = tableView.indexPathForSelectedRow{
+            let item = areaList[indexPath.section][indexPath.row]
+            let vc = segue.destination as! AreaTemasViewController
+            vc.title = item.tema
+            vc.idTema = item.idTema
+        }
+    }
 }
 
 extension AreasOportunidadViewController: UITableViewDataSource{

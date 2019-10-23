@@ -233,9 +233,9 @@ func createTopTabBar()->TMBarView<TMHorizontalBarLayout, TMLabelBarButton, TMLin
     bar.layout.contentMode = .fit
     bar.buttons.customize { (button) in
         button.tintColor = ColorPalette.SystemGray2
-        button.font = .systemFont(ofSize: 15)
+        button.font = .systemFont(ofSize: 14)
         button.selectedTintColor = .white
-        button.selectedFont = .boldSystemFont(ofSize: 15)
+        button.selectedFont = .boldSystemFont(ofSize: 14)
         
     }
     return bar

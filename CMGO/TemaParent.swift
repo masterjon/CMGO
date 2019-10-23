@@ -8,6 +8,10 @@
 
 import Foundation
 
+struct TemaGrandParent{
+    let title:String
+    var temaParents:[TemaParent]
+}
 struct TemaParent{
     let title:String
     var events:[Evento]
