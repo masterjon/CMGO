@@ -93,11 +93,13 @@ extension MiAgendaViewController: UITableViewDataSource, UITableViewDelegate{
             tableView.beginUpdates()
             if let item = agenda[indexPath.section].items[indexPath.row] as? Evento{
                 deleteMyEvent(item: item)
-                deletePendingNotif(identifier:"event-\(item.id_evento)")
+                deletePendingNotif(identifier:"event-\(item.id_evento)--3")
+                deletePendingNotif(identifier:"event-\(item.id_evento)--30")
             }
             else if let item = agenda[indexPath.section].items[indexPath.row] as? Test{
                 deleteMyTest(item: item)
-                deletePendingNotif(identifier:"examen-\(item.id_sede)")
+                deletePendingNotif(identifier:"examen-\(item.id_sede)--3")
+                deletePendingNotif(identifier:"examen-\(item.id_sede)--30")
                 
             }
             agenda[indexPath.section].items.remove(at: indexPath.row)

@@ -82,7 +82,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 if json["status"].boolValue{
                     if let token = json["msg"]["cmgo_user_token"].string{
                         print(token)
-                        let username = "\(json["msg"]["nombre"].stringValue.capitalizingFirstLetter()) \(json["msg"]["primer_apellido"].stringValue.capitalizingFirstLetter()) \(json["msg"]["segundo_apellido"].stringValue.capitalizingFirstLetter())"
+                        let username = "\(json["msg"]["nombre"].stringValue) \(json["msg"]["primer_apellido"].stringValue) \(json["msg"]["segundo_apellido"].stringValue)".capitalized
                         UserDefaults.standard.set(username,forKey: KEY.UserDefaults.username)
                         UserDefaults.standard.synchronize()
                         self.keychain[KEY.Keychain.userToken] = token
