@@ -22,10 +22,14 @@ class MenuViewController: UIViewController {
         ["icon":"P5-R10", "title":"Contacto", "vc":"ContactoNVC"]
     ]
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         if getUserToken() != nil{
             items.append(["icon":"logout1", "title":"Cerrar sesión", "vc":"LogoutVC"])
+            if let username = UserDefaults.standard.string(forKey: KEY.UserDefaults.username){ items.insert(["icon":"user", "title":username], at: 0)
+            }
+
         }
 
     }
@@ -52,6 +56,7 @@ extension MenuViewController: UITableViewDataSource, UITableViewDelegate{
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         guard let vcTitle = items[indexPath.row]["vc"] else{return}
         let nvc = storyBoard.instantiateViewController(withIdentifier: vcTitle)
+        nvc.modalPresentationStyle = .fullScreen
         self.present(nvc, animated: false, completion: nil)
     }
     

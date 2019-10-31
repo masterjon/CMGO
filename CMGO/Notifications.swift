@@ -13,7 +13,7 @@ enum NotificationType{
     case event,test
 }
 
-func setupNotification(item:Any, type:NotificationType){
+func setupNotification(item:Any, type:NotificationType, days: Int){
     
     let content = UNMutableNotificationContent()
     var identifier = ""
@@ -24,8 +24,8 @@ func setupNotification(item:Any, type:NotificationType){
         titleEl = "Evento"
         if let event = item as? Evento{
             content.body = event.nombre_evento
-            identifier = "event-\(event.id_evento)"
-            dateTimeTemp = getNotificationDateTime(fecha:event.f_inicio,hora:Settings.defaultNotiftime)
+            identifier = "event-\(event.id_evento)-\(days)"
+            dateTimeTemp = getNotificationDateTime(fecha:event.f_inicio,hora:Settings.defaultNotiftime, days: days)
         }
         
         //dateTimeTemp = appointment.getNotificationDateTime2()
@@ -33,8 +33,8 @@ func setupNotification(item:Any, type:NotificationType){
         titleEl = "Examen"
         if let test = item as? Test{
             content.body = test.sede
-            identifier = "examen-\(test.id_sede)"
-            dateTimeTemp = getNotificationDateTime(fecha:test.fecha,hora:test.hora_inicio)
+            identifier = "examen-\(test.id_sede)-\(days)"
+            dateTimeTemp = getNotificationDateTime(fecha:test.fecha,hora:test.hora_inicio, days: days)
 
         }
         

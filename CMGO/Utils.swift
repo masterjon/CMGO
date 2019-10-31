@@ -16,6 +16,7 @@ enum KEY{
     enum UserDefaults{
         static let myTests = "myTests"
         static let myEvents = "myEvents"
+        static let username = "username"
     }
     enum Keychain{
         static let userToken = "token"
@@ -92,7 +93,8 @@ func addMyTests(item:Test)->(Bool,String){
     tests.append(item)
     guard let data = try? JSONEncoder().encode(tests) else { return (false,"Hubo un error, intenta de nuevo mas tarde") }
     UserDefaults.standard.set(data, forKey: KEY.UserDefaults.myTests)
-    setupNotification(item:item, type:.test)
+    setupNotification(item:item, type:.test, days:-3)
+    setupNotification(item:item, type:.test, days:-30)
     return (true,"Este examen ha sido exitosamente agregado a su agenda")
 }
 
@@ -110,7 +112,8 @@ func addMyEvent(item:Evento)->(Bool,String){
     eventos.append(item)
     guard let data = try? JSONEncoder().encode(eventos) else { return (false,"Hubo un error, intenta de nuevo mas tarde") }
     UserDefaults.standard.set(data, forKey: KEY.UserDefaults.myEvents)
-    setupNotification(item:item, type:.event)
+    setupNotification(item:item, type:.event, days: -3)
+    setupNotification(item:item, type:.event, days: -30)
     return (true,"Este evento ha sido exitosamente agregado a su agenda")
 }
 
@@ -202,15 +205,16 @@ func getDateTime(fecha:String,hora:String)->Date?{
     return dt
 }
 
-func getNotificationDateTime(fecha:String,hora:String)->Date?{
+func getNotificationDateTime(fecha:String,hora:String,days:Int)->Date?{
     guard let dateTime = getDateTime(fecha: fecha,hora: hora) else { return nil}
     print("getDateNotif: \(dateTime)")
     let calendar = Calendar.current
-    let date = calendar.date(byAdding: .day, value: -3, to: dateTime)
+    let date = calendar.date(byAdding: .day, value: days, to: dateTime)
     //let date = calendar.date(byAdding: .minute, value: 1, to: Date())
     
     return date
 }
+
 
 class RoundedCornersView: UIView{
     
@@ -242,4 +246,12 @@ func createTopTabBar()->TMBarView<TMHorizontalBarLayout, TMLabelBarButton, TMLin
 }
 
 
-
+extension String {
+    func capitalizingFirstLetter() -> String {
+        return prefix(1).capitalized + dropFirst()
+    }
+    
+    mutating func capitalizeFirstLetter() {
+        self = self.capitalizingFirstLetter()
+    }
+}

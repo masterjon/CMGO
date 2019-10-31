@@ -14,6 +14,8 @@ class LogoutViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         deleteUserToken()
+        UserDefaults.standard.set("",forKey: KEY.UserDefaults.username)
+        UserDefaults.standard.synchronize()
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) { // Change `2.0` to the desired
             
             let home = self.storyBoard.instantiateViewController(withIdentifier: "InicioNVC")

@@ -29,8 +29,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         self.view.addGestureRecognizer(recognizer)
          NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         NotificationCenter.default.addObserver(self,selector: #selector(keyboardWillShow),name: UIResponder.keyboardWillShowNotification,object: nil)
-//        usernameTextField.text = "0000000010"
-//        passwordTextField.text = "123456"
+        usernameTextField.text = "0000000010"
+        passwordTextField.text = "123456"
         // Do any additional setup after loading the view.
     }
     
@@ -79,6 +79,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 if json["status"].boolValue{
                     if let token = json["msg"]["cmgo_user_token"].string{
                         print(token)
+                        let username = "\(json["msg"]["nombre"].stringValue.capitalizingFirstLetter()) \(json["msg"]["primer_apellido"].stringValue.capitalizingFirstLetter()) \(json["msg"]["segundo_apellido"].stringValue.capitalizingFirstLetter())"
+                        UserDefaults.standard.set(username,forKey: KEY.UserDefaults.username)
+                        UserDefaults.standard.synchronize()
                         self.keychain[KEY.Keychain.userToken] = token
                         self.dismiss(animated: true, completion: {
                             self.delegate?.changeTab(index: 1)
