@@ -29,8 +29,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         self.view.addGestureRecognizer(recognizer)
          NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         NotificationCenter.default.addObserver(self,selector: #selector(keyboardWillShow),name: UIResponder.keyboardWillShowNotification,object: nil)
+        
+        #if DEBUG
         usernameTextField.text = "0000000010"
         passwordTextField.text = "123456"
+        #endif
         // Do any additional setup after loading the view.
     }
     
